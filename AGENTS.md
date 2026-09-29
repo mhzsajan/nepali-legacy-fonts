@@ -60,6 +60,16 @@ The short version:
   read. A word containing one renders those characters in a fallback
   typeface mid-word, with no error. The 3 `UNICODE` preferred fonts
   (`Arya`, `Kalam`, `Rajdhani`) do not have this problem.
+- **On "modify the engine" / "change engine" / "rebuild the fonts":** the first
+  two are dead ends and the third is live. Remotion does not shape text —
+  Chromium does, and the fonts carry **no Devanagari `cmap` and no
+  GSUB/GPOS/GDEF**, so no engine change can make them render. Every mainstream
+  stack is HarfBuzz over a strict `cmap`, so switching engines repeats the same
+  refusal. What does work is fixing the font: `scripts/build_unicode.py`
+  inverts a layout back into a `cmap`, and in Chromium that was enough for the
+  font to draw its own glyphs for Devanagari with no GSUB at all.
+  Full findings, measurements and the subtable trap:
+  **[`docs/UNICODE-REBUILD.md`](docs/UNICODE-REBUILD.md)**.
 
 ## First run on a new machine
 

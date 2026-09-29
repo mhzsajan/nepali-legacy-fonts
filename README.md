@@ -192,8 +192,13 @@ unnecessary — a legacy font already keeps its Devanagari punctuation on the
 ASCII codepoints, so punctuation passes through untouched. Mapping it twice
 is what produced the literal `==`.
 
-**Fonts are not converted.** Rebuilding one as Unicode means authoring a
-`cmap` *and* GSUB ligature tables with no ground truth to check against.
+**Fonts are not converted — yet.** Rebuilding one as Unicode means authoring a
+`cmap` *and* GSUB ligature tables with no ground truth to check against. The
+`cmap` half has since been shown to work: inverted straight from an existing
+layout, Chromium draws the font's own glyphs for Devanagari with **no GSUB at
+all**. The ligature half and the ground-truth problem are unsolved, so nothing
+is shipped — but the premise that it cannot be done is no longer true.
+See `docs/UNICODE-REBUILD.md` and `scripts/build_unicode.py`.
 
 ---
 
@@ -341,7 +346,7 @@ here, and the difference is silent wrong letters, not an error.
 | `ङ`, `ञ`, `ज्ञ` | ❌ **NOT FIXED — cannot be** | aNepali publishes those three slots as Devanagari, not as a key |
 | virama `्`, candrabindu `ँ` | ❌ **NOT FIXED** | same cause; found by rendering songs, not by any word list |
 | Symbols / punctuation mapping | ⛔ **DELIBERATELY NOT DONE** | not calibratable across pages; legacy fonts already keep punctuation on ASCII |
-| Fonts rebuilt as Unicode | ⛔ **DELIBERATELY NOT DONE** | would need a `cmap` + GSUB with no ground truth |
+| Fonts rebuilt as Unicode | 🟡 **INVESTIGATED — PoC works** | A `cmap` inverted from the layout is enough on its own: in Chromium, 15 of 21 probed characters drew the font's own glyph. Not shipped — 33 composed entries and the five gaps remain. See [`docs/UNICODE-REBUILD.md`](docs/UNICODE-REBUILD.md) |
 
 **What an agent must not claim:** that a layout is *proven correct*. The
 verifier proves the encoder is self-consistent and every key reaches a real
@@ -433,6 +438,7 @@ question.
 | `docs/GETTING-STARTED.md` | Install and first use |
 | `AGENTS.md` | For an AI agent, and the Windows traps |
 | `docs/METHOD.md` | How layouts are derived, and what that does **not** prove |
+| `docs/UNICODE-REBUILD.md` | Rebuilding the fonts as Unicode — findings, PoC, what is left |
 | `docs/REMOTION-PATCH.md` | The renderer changes |
 | `docs/RELEASES.md` | Which archive answers which need |
 | `docs/FONTS-DIR.md` | The fonts, and the licensing question |
