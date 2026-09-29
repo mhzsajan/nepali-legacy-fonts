@@ -120,10 +120,56 @@ If the page publishes no character table, the tool says `NOTABLE` and refuses
 to invent a layout. That is the correct outcome — such a font needs a
 hand-written map, and the tool should not pretend otherwise.
 
+## Before using any legacy font, check it will not corrupt words
+
+The legacy path can pass an unmapped Devanagari character straight through to
+a font that has no glyph for it, and Chromium then substitutes a *different*
+font for that character. The word comes out drawn in two typefaces and the
+stray mark can read as a `0` or an `O` — which is why this gets mistaken for
+"the font is a bit odd" and shipped.
+
+```bash
+py scripts/passthrough.py layouts/<slug>.json "song.lrc"
+```
+
+Any output beyond "Every Devanagari character has a key" means words will be
+corrupted. On real Nepali lyrics AMS Manthan fails this on 34 of 110 words —
+virama, candrabindu and nya have no key.
+
+**Then check the encoding itself:**
+
+```bash
+py scripts/diag_encode.py layouts/<slug>.json --lrc "song.lrc"
+```
+
+This prints the encoder's keys beside the source, which is the only way to
+see a wrong matra order. A pre-base i-matra that kept its carrier writes a
+stray KA and turns `रिसले` into `किस्तो` — valid Devanagari, wrong word, no
+error anywhere else.
+
+**Then read the render log.** `!! not round-trip exact: 'x' -> 'keys'` on
+stderr means that word is wrong. Treat it as a stop condition; a clean run
+prints only the `OK ... lines encoded` line.
+
+`docs/LEGACY-PITFALLS.md` covers all of this with measurements.
+
+## The better answer is usually a Unicode font
+
+If no specific classic typeface is required, `--font "Nirmala UI"` removes
+every failure mode on this page at once. Nirmala UI ships with Windows 11, so
+it needs no install and behaves identically on any machine. 58 of the 214
+fonts are Unicode, and most of the rest of this repository's tooling exists
+only for the case where you specifically need a legacy look.
+
+Do not reach for the legacy path by default. Ask first whether a Unicode
+font will do.
+
 ## Common tasks
 
 ```bash
 py scripts/which_fonts.py fonts/            # what do I type for each font?
+py scripts/passthrough.py layouts/ams-manthan.json "song.lrc"   # will words corrupt?
+py scripts/diag_encode.py layouts/ams-manthan.json --lrc "song.lrc"  # is the encoding right?
 py scripts/sweep.py --report                # summarise without refetching
 py scripts/sweep.py --only ams-manthan      # one font
 py scripts/verify_layouts.py --all          # check every generated layout

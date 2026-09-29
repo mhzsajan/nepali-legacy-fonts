@@ -176,6 +176,56 @@ is what produced the literal `==`.
 **Fonts are not converted.** Rebuilding one as Unicode means authoring a
 `cmap` *and* GSUB ligature tables with no ground truth to check against.
 
+---
+
+# Read this before choosing a font
+
+**A Unicode font is almost always the right answer.** If you do not need a
+specific classic typeface, use `--font "Nirmala UI"` and stop. No
+transcoding, no layout file, no Python, and no possibility of a character
+rendering in the wrong typeface.
+
+Everything above this line exists only for when you need a *specific* look
+that no Unicode font provides. That path is real and the tooling is solid,
+but it has costs which are measured in **`docs/LEGACY-PITFALLS.md`** rather
+than guessed at.
+
+## What the legacy path can and cannot do
+
+Measured on real Nepali lyrics, two songs, 110 distinct words:
+**34 words needed a character the AMS Manthan layout does not expose.**
+
+| Character | Words | Consequence |
+|---|---:|---|
+| `्` virama | 21 | conjuncts unrenderable |
+| `ँ` candrabindu | 12 | आँ, सँ, कहिँ broken |
+| `ञ` | 1 | चञ्चल broken |
+
+aNepali publishes those three slots as Devanagari rather than as a key, so
+there is nothing to read and no way to derive them. They reach the font
+unmapped, and Chromium substitutes a *different* font for exactly those
+characters — which is what produces a word drawn in two typefaces, and what
+makes a stray mark read as a `0` or an `O` instead of as obviously wrong.
+
+`ङ`, `ञ` and `ज्ञ` were already documented gaps. The **virama and
+candrabindu** gaps were found later, by rendering actual songs — they are in
+the word "हिस्सी" and "आँखा", which no word list would have flagged.
+
+## The Unicode fonts
+
+58 of the 214 need no transcoding and no layout, so every character is
+native. **Nirmala UI ships with Windows 11**, so it works on any machine with
+nothing to install — which also means it will behave identically on a home PC
+and on a show laptop.
+
+The rest are in `fonts/` under the `UNICODE` class, mostly SIL OFL: Mukta,
+Noto Sans/Serif Devanagari, Yantramanav, Kalam, Hind, Martel, Rozha One,
+Teko, Laila, Alkatra, Akshar, Anek Devanagari.
+
+```bash
+node render.mjs song.mp3 song.lrc --font "Nirmala UI"
+```
+
 ## Licensing
 
 The fonts are their authors' property and keep their own terms. aNepali:

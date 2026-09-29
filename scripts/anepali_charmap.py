@@ -323,15 +323,31 @@ def build_map(slug, html=None, order=None):
             if not key:
                 continue
 
-            # Matras are published as a carrier consonant plus the mark --
-            # the section heading is "Matras - with 'ka'". The carrier's key
-            # is this font's own ka, so it has to come off before the key is
-            # usable: in AMS Manthan the cell reads "ka" but the matra is "a",
-            # and leaving the carrier on would write ka where a single a was
-            # meant -- every vowel then renders with a stray consonant in
-            # front of it.
-            if frag == "(Matras" and ka_key and key.startswith(ka_key):
-                key = key[len(ka_key):]
+            # Matras are published as the mark applied to a carrier "ka" --
+            # the section heading is "Matras - with 'ka'". The cell therefore
+            # CONTAINS the carrier, and the mark's own key is what remains.
+            #
+            # Which side the carrier sits on is not a detail: it is the
+            # font's visual-order convention, and getting it wrong inserts a
+            # whole spurious consonant. A PRE-BASE matra is stored AFTER its
+            # consonant in Unicode but must be DRAWN BEFORE it, so its cell
+            # reads mark-then-carrier -- AMS Manthan publishes ka+i-matra as
+            # "ik". Stripping only a prefix turned the mark into the two-key
+            # "ik", so the encoder wrote a KA where none belonged:
+            #     risle  ->  "ikr s a l a e"
+            # and the font dutifully drew  ka  i-matra  ra ... The render came
+            # out as "kisto" instead of "risle" -- valid, plausible, wrong.
+            #
+            # So: try prefix, then suffix, then accept the cell as-is. Never
+            # guess beyond those.
+            if frag == "(Matras" and ka_key:
+                if key.startswith(ka_key) and len(key) > len(ka_key):
+                    key = key[len(ka_key):]
+                elif key.endswith(ka_key) and len(key) > len(ka_key):
+                    key = key[:-len(ka_key)]
+                else:
+                    # The carrier is not separable; the cell is the mark.
+                    pass
                 if not key:
                     continue
             # A cell that is already Devanagari is not a key at all. aNepali
