@@ -1,4 +1,17 @@
+# .cache holds the fetched aNepali HTML pages: ~214 files, several MB, and
+# pure build product. It makes a re-run of sweep.py free instead of 214
+# requests, but it is regenerated in a minute and has no business in history.
+.cache/
+
+# Render and conversion output.
+out/
+verify.json
+
+# Packaged installers, editor and OS droppings.
+Thumbs.db
+desktop.ini
+.DS_Store
 __pycache__/
 *.pyc
-out/
 *.log
+*.bak

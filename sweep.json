@@ -1,0 +1,3487 @@
+[
+ {
+  "slug": "0001-arap-bk",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "0001_ARAP__BK.zip",
+  "mapping": "preeti",
+  "title": "0001 ARAP  BK",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "001-arap-graphic",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "001__Arap_Graphic.zip",
+  "mapping": "preeti",
+  "title": "001  Arap Graphic",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "0012-arap",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "0012__ARAP.zip",
+  "mapping": "preeti",
+  "title": "0012  ARAP",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "0012-arap-bi",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "0012__ARAP__BI.zip",
+  "mapping": "preeti",
+  "title": "0012  ARAP  BI",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "0017-arap",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "0017__ARAP.zip",
+  "mapping": "preeti",
+  "title": "0017  ARAP",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "003-arap",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "003_ARAP.zip",
+  "mapping": "preeti",
+  "title": "003 ARAP",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "aakriti",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Aakriti.zip",
+  "mapping": "preeti",
+  "title": "Aakriti",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "abhinav",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Abhinav.zip",
+  "mapping": "preeti",
+  "title": "Abhinav",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "akshar",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Akshar.zip",
+  "mapping": "unicode",
+  "title": "Akshar",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "alkatra",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Alkatra.zip",
+  "mapping": "unicode",
+  "title": "Alkatra",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "amiko",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Amiko.zip",
+  "mapping": "unicode",
+  "title": "Amiko",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "amita",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Amita.zip",
+  "mapping": "unicode",
+  "title": "Amita",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "ams-1",
+  "class": "NOTABLE",
+  "why": "legacy, but the page publishes no character table",
+  "zip": "AMS_Calligraphy_1.zip",
+  "mapping": "ams",
+  "title": "AMS 1",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ams-2",
+  "class": "NOTABLE",
+  "why": "legacy, but the page publishes no character table",
+  "zip": "AMS_Calligraphy_2.zip",
+  "mapping": "ams",
+  "title": "AMS 2",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ams-4",
+  "class": "NOTABLE",
+  "why": "legacy, but the page publishes no character table",
+  "zip": "AMS_Calligraphy_4.zip",
+  "mapping": "ams",
+  "title": "AMS 4",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ams-5",
+  "class": "NOTABLE",
+  "why": "legacy, but the page publishes no character table",
+  "zip": "AMS_Calligraphy_5.zip",
+  "mapping": "ams",
+  "title": "AMS 5",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ams-6",
+  "class": "NOTABLE",
+  "why": "legacy, but the page publishes no character table",
+  "zip": "AMS_Calligraphy_6.zip",
+  "mapping": "ams",
+  "title": "AMS 6",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ams-7",
+  "class": "NOTABLE",
+  "why": "legacy, but the page publishes no character table",
+  "zip": "AMS_Calligraphy_7.zip",
+  "mapping": "ams",
+  "title": "AMS 7",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ams-8",
+  "class": "NOTABLE",
+  "why": "legacy, but the page publishes no character table",
+  "zip": "AMS_Calligraphy_8.zip",
+  "mapping": "ams",
+  "title": "AMS 8",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ams-9",
+  "class": "NOTABLE",
+  "why": "legacy, but the page publishes no character table",
+  "zip": "AMS_Calligraphy_9.zip",
+  "mapping": "ams",
+  "title": "AMS 9",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ams-aaditya",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Aaditya.zip",
+  "mapping": "ams",
+  "title": "AMS Aaditya",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Aaditya"
+ },
+ {
+  "slug": "ams-aakash",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Aakash.zip",
+  "mapping": "ams",
+  "title": "AMS Aakash",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Aakash"
+ },
+ {
+  "slug": "ams-aakul-1",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Aakul_1.zip",
+  "mapping": "ams",
+  "title": "AMS Aakul 1",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Aakul 1"
+ },
+ {
+  "slug": "ams-aakul-2",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Aakul_2.zip",
+  "mapping": "ams",
+  "title": "AMS Aakul 2",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Aakul 2"
+ },
+ {
+  "slug": "ams-aakul-3",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Aakul_3.zip",
+  "mapping": "ams",
+  "title": "AMS Aakul 3",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Aakul 3"
+ },
+ {
+  "slug": "ams-aakul-4",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Aakul_4.zip",
+  "mapping": "ams",
+  "title": "AMS Aakul 4",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Aakul 4"
+ },
+ {
+  "slug": "ams-aakul-5",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Aakul_5.zip",
+  "mapping": "ams",
+  "title": "AMS Aakul 5",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Aakul 5"
+ },
+ {
+  "slug": "ams-aakul-6",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Aakul_6.zip",
+  "mapping": "ams",
+  "title": "AMS Aakul 6",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Aakul 6"
+ },
+ {
+  "slug": "ams-aakul-7",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Aakul_7.zip",
+  "mapping": "ams",
+  "title": "AMS Aakul 7",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Aakul 7"
+ },
+ {
+  "slug": "ams-aakul-8",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Aakul_8.zip",
+  "mapping": "ams",
+  "title": "AMS Aakul 8",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Aakul 8"
+ },
+ {
+  "slug": "ams-aasmi",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Aasmi.zip",
+  "mapping": "ams",
+  "title": "AMS Aasmi",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Aasmi"
+ },
+ {
+  "slug": "ams-afrin",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Afrin.zip",
+  "mapping": "ams",
+  "title": "AMS Afrin",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Afrin"
+ },
+ {
+  "slug": "ams-anaram2",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Anaram2.zip",
+  "mapping": "ams",
+  "title": "AMS Anaram2",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Anaram2"
+ },
+ {
+  "slug": "ams-ankur",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Ankur.zip",
+  "mapping": "ams",
+  "title": "AMS Ankur",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Ankur"
+ },
+ {
+  "slug": "ams-badhand",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Badhand.zip",
+  "mapping": "ams",
+  "title": "AMS Badhand",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Badhand"
+ },
+ {
+  "slug": "ams-barakhadi",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Barakhadi.zip",
+  "mapping": "ams",
+  "title": "AMS Barakhadi",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Barakhadi"
+ },
+ {
+  "slug": "ams-barakhadi-1",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Barakhadi_1.zip",
+  "mapping": "ams",
+  "title": "AMS Barakhadi 1",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Barakhadi 1"
+ },
+ {
+  "slug": "ams-bhagyshri",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Bhagyshri.zip",
+  "mapping": "ams",
+  "title": "AMS Bhagyshri",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Bhagyshri"
+ },
+ {
+  "slug": "ams-bindu-rekha-1",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Bindu_Rekha_1.zip",
+  "mapping": "ams",
+  "title": "AMS Bindu Rekha 1",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Bindu Rekha 1"
+ },
+ {
+  "slug": "ams-candy",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Candy.zip",
+  "mapping": "ams",
+  "title": "AMS Candy",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Candy"
+ },
+ {
+  "slug": "ams-chandrakant",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Chandrakant.zip",
+  "mapping": "ams",
+  "title": "AMS Chandrakant",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Chandrakant"
+ },
+ {
+  "slug": "ams-chhatrapati",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Chhatrapati.zip",
+  "mapping": "ams",
+  "title": "AMS Chhatrapati",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Chhatrapati"
+ },
+ {
+  "slug": "ams-cinema",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Cinema.zip",
+  "mapping": "ams",
+  "title": "AMS Cinema",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Cinema"
+ },
+ {
+  "slug": "ams-darshana",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Darshana.zip",
+  "mapping": "ams",
+  "title": "AMS Darshana",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Darshana"
+ },
+ {
+  "slug": "ams-deepak",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Deepak.zip",
+  "mapping": "ams",
+  "title": "AMS Deepak",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Deepak"
+ },
+ {
+  "slug": "ams-dipanshu",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Dipanshu.zip",
+  "mapping": "ams",
+  "title": "AMS Dipanshu",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Dipanshu"
+ },
+ {
+  "slug": "ams-divya",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Divya.zip",
+  "mapping": "ams",
+  "title": "AMS Divya",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Divya"
+ },
+ {
+  "slug": "ams-diya",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Diya.zip",
+  "mapping": "ams",
+  "title": "AMS Diya",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Diya"
+ },
+ {
+  "slug": "ams-ganesha",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Ganesha.zip",
+  "mapping": "ams",
+  "title": "AMS Ganesha",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Ganesha"
+ },
+ {
+  "slug": "ams-geoscript",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Geoscript.zip",
+  "mapping": "ams",
+  "title": "AMS Geoscript",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Geoscript"
+ },
+ {
+  "slug": "ams-girija",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Girija.zip",
+  "mapping": "ams",
+  "title": "AMS Girija",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Girija"
+ },
+ {
+  "slug": "ams-glassy",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Glassy.zip",
+  "mapping": "ams",
+  "title": "AMS Glassy",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Glassy"
+ },
+ {
+  "slug": "ams-gourav",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Gourav.zip",
+  "mapping": "ams",
+  "title": "AMS Gourav",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Gourav"
+ },
+ {
+  "slug": "ams-gourav-bold",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Gourav_Bold.zip",
+  "mapping": "ams",
+  "title": "AMS Gourav Bold",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Gourav Bold"
+ },
+ {
+  "slug": "ams-grass",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Grass.zip",
+  "mapping": "ams",
+  "title": "AMS Grass",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Grass"
+ },
+ {
+  "slug": "ams-handwriting-1",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Handwriting_1.zip",
+  "mapping": "ams",
+  "title": "AMS Handwriting 1",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Handwriting 1"
+ },
+ {
+  "slug": "ams-handwriting-2",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Handwriting_2.zip",
+  "mapping": "ams",
+  "title": "AMS Handwriting 2",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Handwriting 2"
+ },
+ {
+  "slug": "ams-handwriting-3",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Handwriting_3.zip",
+  "mapping": "ams",
+  "title": "AMS Handwriting 3",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Handwriting 3"
+ },
+ {
+  "slug": "ams-handwriting-4",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Handwriting_4.zip",
+  "mapping": "ams",
+  "title": "AMS Handwriting 4",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Handwriting 4"
+ },
+ {
+  "slug": "ams-harshdeep",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Harshdeep.zip",
+  "mapping": "ams",
+  "title": "AMS Harshdeep",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Harshdeep"
+ },
+ {
+  "slug": "ams-hastkala",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Hastkala.zip",
+  "mapping": "ams",
+  "title": "AMS Hastkala",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Hastkala"
+ },
+ {
+  "slug": "ams-hastkala-1",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Hastkala_1.zip",
+  "mapping": "ams",
+  "title": "AMS Hastkala 1",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Hastkala 1"
+ },
+ {
+  "slug": "ams-hastkala-2",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Hastkala_2.zip",
+  "mapping": "ams",
+  "title": "AMS Hastkala 2",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Hastkala 2"
+ },
+ {
+  "slug": "ams-indu",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Indu.zip",
+  "mapping": "ams",
+  "title": "AMS Indu",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Indu"
+ },
+ {
+  "slug": "ams-jambo",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Jambo.zip",
+  "mapping": "ams",
+  "title": "AMS Jambo",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Jambo"
+ },
+ {
+  "slug": "ams-jiwan",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Jiwan.zip",
+  "mapping": "ams",
+  "title": "AMS Jiwan",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Jiwan"
+ },
+ {
+  "slug": "ams-kangna",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Kangna.zip",
+  "mapping": "ams",
+  "title": "AMS Kangna",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Kangna"
+ },
+ {
+  "slug": "ams-kartik",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Kartik.zip",
+  "mapping": "ams",
+  "title": "AMS Kartik",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Kartik"
+ },
+ {
+  "slug": "ams-karuna",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Karuna.zip",
+  "mapping": "ams",
+  "title": "AMS Karuna",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Karuna"
+ },
+ {
+  "slug": "ams-kashi",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Kashi.zip",
+  "mapping": "ams",
+  "title": "AMS Kashi",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Kashi"
+ },
+ {
+  "slug": "ams-kasturi-1",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Kasturi_1.zip",
+  "mapping": "ams",
+  "title": "AMS Kasturi 1",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Kasturi 1"
+ },
+ {
+  "slug": "ams-kasturi-regular",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Kasturi_Regular.zip",
+  "mapping": "ams",
+  "title": "AMS Kasturi Regular",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Kasturi Regular"
+ },
+ {
+  "slug": "ams-kesri",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Kesri.zip",
+  "mapping": "ams",
+  "title": "AMS Kesri",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Kesri"
+ },
+ {
+  "slug": "ams-kesri-1",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Kesri_1.zip",
+  "mapping": "ams",
+  "title": "AMS Kesri 1",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Kesri 1"
+ },
+ {
+  "slug": "ams-khadu",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Khadu.zip",
+  "mapping": "ams",
+  "title": "AMS Khadu",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Khadu"
+ },
+ {
+  "slug": "ams-kirti",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Kirti.zip",
+  "mapping": "ams",
+  "title": "AMS Kirti",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Kirti"
+ },
+ {
+  "slug": "ams-leafy",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Leafy.zip",
+  "mapping": "ams",
+  "title": "AMS Leafy",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Leafy"
+ },
+ {
+  "slug": "ams-leafy-1",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Leafy_1.zip",
+  "mapping": "ams",
+  "title": "AMS Leafy 1",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Leafy 1"
+ },
+ {
+  "slug": "ams-leafy-2",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Leafy_2.zip",
+  "mapping": "ams",
+  "title": "AMS Leafy 2",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Leafy 2"
+ },
+ {
+  "slug": "ams-leafy-3",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Leafy_3.zip",
+  "mapping": "ams",
+  "title": "AMS Leafy 3",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Leafy 3"
+ },
+ {
+  "slug": "ams-lekhan-1",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Lekhan_1.zip",
+  "mapping": "ams",
+  "title": "AMS Lekhan 1",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Lekhan 1"
+ },
+ {
+  "slug": "ams-lekhan-1-bold",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Lekhan_1_Bold.zip",
+  "mapping": "ams",
+  "title": "AMS Lekhan 1 Bold",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Lekhan 1 Bold"
+ },
+ {
+  "slug": "ams-lekhan-2",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Lekhan_2.zip",
+  "mapping": "ams",
+  "title": "AMS Lekhan 2",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Lekhan 2"
+ },
+ {
+  "slug": "ams-lekhan-3",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Lekhan_3.zip",
+  "mapping": "ams",
+  "title": "AMS Lekhan 3",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Lekhan 3"
+ },
+ {
+  "slug": "ams-lekhan-4",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Lekhan_4.zip",
+  "mapping": "ams",
+  "title": "AMS Lekhan 4",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Lekhan 4"
+ },
+ {
+  "slug": "ams-lekhan-5",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Lekhan_5.zip",
+  "mapping": "ams",
+  "title": "AMS Lekhan 5",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Lekhan 5"
+ },
+ {
+  "slug": "ams-mahabharat",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Mahabharat.zip",
+  "mapping": "ams",
+  "title": "AMS Mahabharat",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Mahabharat"
+ },
+ {
+  "slug": "ams-manoja",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Manoja.zip",
+  "mapping": "ams",
+  "title": "AMS Manoja",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Manoja"
+ },
+ {
+  "slug": "ams-manthan",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Manthan.zip",
+  "mapping": "ams",
+  "title": "AMS Manthan",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Manthan"
+ },
+ {
+  "slug": "ams-mantra",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Mantra.zip",
+  "mapping": "ams",
+  "title": "AMS Mantra",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Mantra"
+ },
+ {
+  "slug": "ams-matarani",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
+  "zip": "AMS_Matarani.zip",
+  "mapping": "ams",
+  "title": "AMS Matarani",
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams Matarani"
+ },
+ {
+  "slug": "ananda-devanagari-ktm",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Ananda_Devanagari_KTM.zip",
+  "mapping": "preeti",
+  "title": "Ananda Devanagari KTM",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ananda-devanagari-np",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Ananda_Devanagari_NP.zip",
+  "mapping": "preeti",
+  "title": "Ananda Devanagari NP",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ananda-fanko-2",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Ananda_Fanko_2.zip",
+  "mapping": "preeti",
+  "title": "Ananda Fanko 2",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ananda-lipi-bold-bt",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Ananda_Lipi_Bold_Bt.zip",
+  "mapping": "preeti",
+  "title": "Ananda Lipi Bold Bt",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ananda-lipi-bold-cn-bt",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Ananda_Lipi_Bold_Cn_Bt.zip",
+  "mapping": "preeti",
+  "title": "Ananda Lipi Bold Cn Bt",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ananda-lipi-bt",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Ananda_Lipi_Bt.zip",
+  "mapping": "preeti",
+  "title": "Ananda Lipi Bt",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ananda-lipi-cn-bt",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Ananda_Lipi_Cn_Bt.zip",
+  "mapping": "preeti",
+  "title": "Ananda Lipi Cn Bt",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ananda-lipi-lt-bt",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Ananda_Lipi_Lt_Bt.zip",
+  "mapping": "preeti",
+  "title": "Ananda Lipi Lt Bt",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ananda-thopla",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Ananda_Thopla.zip",
+  "mapping": "preeti",
+  "title": "Ananda Thopla",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ananda-ukaliorali",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Ananda_ukaliorali.zip",
+  "mapping": "preeti",
+  "title": "Ananda ukaliorali",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ananda-ukaliorali-2",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Ananda_Ukaliorali_2.zip",
+  "mapping": "preeti",
+  "title": "Ananda Ukaliorali 2",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "ananda-ukaliorali-3",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Ananda_Ukaliorali_3.zip",
+  "mapping": "preeti",
+  "title": "Ananda Ukaliorali 3",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "anandaround",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Anandaround.zip",
+  "mapping": "preeti",
+  "title": "Anandaround",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "anandasansar",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "AnandaSansar.zip",
+  "mapping": "preeti",
+  "title": "AnandaSansar",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "anandazz-hv",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Anandazz_Hv.zip",
+  "mapping": "preeti",
+  "title": "Anandazz Hv",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "anandazz-lt",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Anandazz_Lt.zip",
+  "mapping": "preeti",
+  "title": "Anandazz Lt",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "anek-devanagari",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Anek_Devanagari.zip",
+  "mapping": "unicode",
+  "title": "Anek Devanagari",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "annapurna-sil",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Annapurna_SIL.zip",
+  "mapping": "unicode",
+  "title": "Annapurna SIL",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "arap-002",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "ARAP_002.zip",
+  "mapping": "preeti",
+  "title": "ARAP 002",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "arap-003",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "ARAP__003.zip",
+  "mapping": "preeti",
+  "title": "ARAP  003",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "arap-004",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "ARAP_004.zip",
+  "mapping": "preeti",
+  "title": "ARAP 004",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "arap-006",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "ARAP__006.zip",
+  "mapping": "preeti",
+  "title": "ARAP  006",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "arap-008",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "ARAP_008.zip",
+  "mapping": "preeti",
+  "title": "ARAP 008",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "arap-009",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "ARAP_009.zip",
+  "mapping": "preeti",
+  "title": "ARAP 009",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "arap-010",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "ARAP_010.zip",
+  "mapping": "preeti",
+  "title": "ARAP 010",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "arap-1111",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "ARAP_1111.zip",
+  "mapping": "preeti",
+  "title": "ARAP 1111",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "arap007",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "ARAP007.zip",
+  "mapping": "preeti",
+  "title": "ARAP007",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "arya",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Arya.zip",
+  "mapping": "unicode",
+  "title": "Arya",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "asar",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Asar.zip",
+  "mapping": "unicode",
+  "title": "Asar",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "bahunbad",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Bahunbad.zip",
+  "mapping": "preeti",
+  "title": "Bahunbad",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "bakbak-one",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Bakbak_One.zip",
+  "mapping": "unicode",
+  "title": "Bakbak One",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "baloo-2",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Baloo_2.zip",
+  "mapping": "unicode",
+  "title": "Baloo 2",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "banban",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Banban.zip",
+  "mapping": "preeti",
+  "title": "Banban",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "bantawa",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Bantawa.zip",
+  "mapping": "preeti",
+  "title": "Bantawa",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "bhaktapur",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Bhaktapur.zip",
+  "mapping": "preeti",
+  "title": "Bhaktapur",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "bikrant-bold",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Bikrant_Bold.zip",
+  "mapping": "preeti",
+  "title": "Bikrant Bold",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "bina",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Bina.zip",
+  "mapping": "preeti",
+  "title": "Bina",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "biryani",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Biryani.zip",
+  "mapping": "unicode",
+  "title": "Biryani",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "bishwa-calligraphy",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Bishwa_Calligraphy.zip",
+  "mapping": "preeti",
+  "title": "Bishwa Calligraphy",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "cambay",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Cambay.zip",
+  "mapping": "unicode",
+  "title": "Cambay",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "cv-bihani",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "CV_Bihani.zip",
+  "mapping": "preeti",
+  "title": "CV Bihani",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "cv-gadah",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "CV_Gadah.zip",
+  "mapping": "preeti",
+  "title": "CV Gadah",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "cv-haha",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "CV_Haha.zip",
+  "mapping": "preeti",
+  "title": "CV Haha",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "cv-rabinbold",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "CV_Rabinbold.zip",
+  "mapping": "preeti",
+  "title": "CV Rabinbold",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "deepankar",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Deepankar.zip",
+  "mapping": "preeti",
+  "title": "Deepankar",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "dekko",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Dekko.zip",
+  "mapping": "unicode",
+  "title": "Dekko",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "dev-nep",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Dev_Nep.zip",
+  "mapping": "preeti",
+  "title": "Dev Nep",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "eczar",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Eczar.zip",
+  "mapping": "unicode",
+  "title": "Eczar",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "gadha",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Gadha.zip",
+  "mapping": "preeti",
+  "title": "Gadha",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "gajraj-one",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Gajraj_One.zip",
+  "mapping": "unicode",
+  "title": "Gajraj One",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "ganess",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "ganess.zip",
+  "mapping": "preeti",
+  "title": "Ganess",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "ganga-1",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Ganga_1.zip",
+  "mapping": "preeti",
+  "title": "Ganga 1",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "glegoo",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Glegoo.zip",
+  "mapping": "unicode",
+  "title": "Glegoo",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "gotu",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Gotu.zip",
+  "mapping": "unicode",
+  "title": "Gotu",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "halant",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Halant.zip",
+  "mapping": "unicode",
+  "title": "Halant",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "himalayabold",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Himalayabold.zip",
+  "mapping": "preeti",
+  "title": "Himalayabold",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "himalli",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Himalli.zip",
+  "mapping": "preeti",
+  "title": "Himalli",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "hind",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Hind.zip",
+  "mapping": "unicode",
+  "title": "Hind",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "ibm-plex-sans-devnagari",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "IBM_Plex_Sans_Devanagari.zip",
+  "mapping": "unicode",
+  "title": "IBM Plex Sans Devnagari",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "inknut-antiqua",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Inknut_Antiqua.zip",
+  "mapping": "unicode",
+  "title": "Inknut Antiqua",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "jaini",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Jaini.zip",
+  "mapping": "unicode",
+  "title": "Jaini",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "jaini-purva",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Jaini_Purva.zip",
+  "mapping": "unicode",
+  "title": "Jaini Purva",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "jaldi",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Jaldi.zip",
+  "mapping": "unicode",
+  "title": "Jaldi",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "kadwa",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Kadwa.zip",
+  "mapping": "unicode",
+  "title": "Kadwa",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "kalam",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Kalam.zip",
+  "mapping": "unicode",
+  "title": "Kalam",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "kalpanauttam-i",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "KalpanaUttam_i.zip",
+  "mapping": "preeti",
+  "title": "KalpanaUttam i",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "kam",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Kam.zip",
+  "mapping": "preeti",
+  "title": "Kam",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "kanchan",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Kanchan.zip",
+  "mapping": "preeti",
+  "title": "Kanchan",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "karma",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Karma.zip",
+  "mapping": "unicode",
+  "title": "Karma",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "katmandu",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Katmandu.zip",
+  "mapping": "preeti",
+  "title": "Katmandu",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "khand",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Khand.zip",
+  "mapping": "unicode",
+  "title": "Khand",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "khelkud",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "khelkud.zip",
+  "mapping": "preeti",
+  "title": "khelkud",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "khula",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Khula.zip",
+  "mapping": "unicode",
+  "title": "Khula",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "kirti",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Kirti.zip",
+  "mapping": "preeti",
+  "title": "Kirti",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "kurale",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Kurale.zip",
+  "mapping": "unicode",
+  "title": "Kurale",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "laila",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Laila.zip",
+  "mapping": "unicode",
+  "title": "Laila",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "maiya",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Maiya.zip",
+  "mapping": "preeti",
+  "title": "Maiya",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "martel",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Martel.zip",
+  "mapping": "unicode",
+  "title": "Martel",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "martel-sans",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Martel_Sans.zip",
+  "mapping": "unicode",
+  "title": "Martel Sans",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "matangi",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Matangi.zip",
+  "mapping": "unicode",
+  "title": "Matangi",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "meghana",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Meghana.zip",
+  "mapping": "preeti",
+  "title": "Meghana",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "meghubold",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Meghubold.zip",
+  "mapping": "preeti",
+  "title": "Meghubold",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "mkali",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "MKali.zip",
+  "mapping": "preeti",
+  "title": "MKali",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "modak",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Modak.zip",
+  "mapping": "unicode",
+  "title": "Modak",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "mukta",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Mukta.zip",
+  "mapping": "unicode",
+  "title": "Mukta",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "mulchand",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "MulChand.zip",
+  "mapping": "preeti",
+  "title": "MulChand",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "mulram",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "MulRam.zip",
+  "mapping": "preeti",
+  "title": "MulRam",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "noto-sans-devanagari",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Noto_Sans_Devanagari.zip",
+  "mapping": "unicode",
+  "title": "Noto Sans Devanagari",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "noto-serif-devanagari",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Noto_Serif_Devanagari.zip",
+  "mapping": "unicode",
+  "title": "Noto Serif Devanagari",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "old-nepali",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Old_Nepali.zip",
+  "mapping": "preeti",
+  "title": "Old Nepali",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "pagal",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Pagal.zip",
+  "mapping": "preeti",
+  "title": "Pagal",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "pagali",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Pagali.zip",
+  "mapping": "preeti",
+  "title": "Pagali",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "palanquin",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Palanquin.zip",
+  "mapping": "unicode",
+  "title": "Palanquin",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "palanquin-dark",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Palanquin_Dark.zip",
+  "mapping": "unicode",
+  "title": "Palanquin Dark",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "parvati",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Parvati.zip",
+  "mapping": "preeti",
+  "title": "Parvati",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "pawang",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "PawanG.zip",
+  "mapping": "preeti",
+  "title": "PawanG",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "pragati-narrow",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Pragati_Narrow.zip",
+  "mapping": "unicode",
+  "title": "Pragati Narrow",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "preeti",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Preeti.zip",
+  "mapping": "preeti",
+  "title": "Preeti",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "rajdhani",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Rajdhani.zip",
+  "mapping": "unicode",
+  "title": "Rajdhani",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "ranga",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Ranga.zip",
+  "mapping": "unicode",
+  "title": "Ranga",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "rhodium-libre",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Rhodium_Libre.zip",
+  "mapping": "unicode",
+  "title": "Rhodium Libre",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "ritu",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Ritu.zip",
+  "mapping": "preeti",
+  "title": "Ritu",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "rozha-one",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Rozha_One.zip",
+  "mapping": "unicode",
+  "title": "Rozha One",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "rukmini",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Rukmini.zip",
+  "mapping": "preeti",
+  "title": "Rukmini",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "sahitya",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Sahitya.zip",
+  "mapping": "unicode",
+  "title": "Sahitya",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "sapana",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Sapana.zip",
+  "mapping": "preeti",
+  "title": "Sapana",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "sarala",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Sarala.zip",
+  "mapping": "unicode",
+  "title": "Sarala",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "sarpanch",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Sarpanch.zip",
+  "mapping": "unicode",
+  "title": "Sarpanch",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "shangrila-textual",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Shangrila_Textual.zip",
+  "mapping": "preeti",
+  "title": "Shangrila Textual",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "shreenath-bold",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Shreenath_Bold.zip",
+  "mapping": "preeti",
+  "title": "Shreenath Bold",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "sumana",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Sumana.zip",
+  "mapping": "unicode",
+  "title": "Sumana",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "sura",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Sura.zip",
+  "mapping": "unicode",
+  "title": "Sura",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "suvadin",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Suvadin.zip",
+  "mapping": "preeti",
+  "title": "Suvadin",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "teko",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Teko.zip",
+  "mapping": "unicode",
+  "title": "Teko",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "tillana",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Tillana.zip",
+  "mapping": "unicode",
+  "title": "Tillana",
+  "deva_cell_ratio": null,
+  "sections": {}
+ },
+ {
+  "slug": "timila",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Timila.zip",
+  "mapping": "preeti",
+  "title": "Timila",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "tiro-devanagari-hindi",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Tiro_Devanagari_Hindi.zip",
+  "mapping": "unicode",
+  "title": "Tiro Devanagari Hindi",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "tiro-devanagari-marathi",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Tiro_Devanagari_Marathi.zip",
+  "mapping": "unicode",
+  "title": "Tiro Devanagari Marathi",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "tiro-devanagari-sanskrit",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Tiro_Devanagari_Sanskrit.zip",
+  "mapping": "unicode",
+  "title": "Tiro Devanagari Sanskrit",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "unnisha",
+  "class": "PREETI",
+  "why": "declared preeti; npttf2utf already has this layout",
+  "zip": "Unnisha.zip",
+  "mapping": "preeti",
+  "title": "Unnisha",
+  "deva_cell_ratio": 0.01,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "vesper-libre",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Vesper_Libre.zip",
+  "mapping": "unicode",
+  "title": "Vesper Libre",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "yantramanav",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Yantramanav.zip",
+  "mapping": "unicode",
+  "title": "Yantramanav",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ },
+ {
+  "slug": "yatra-one",
+  "class": "UNICODE",
+  "why": "declared unicode; renders in Chromium with no work",
+  "zip": "Yatra_One.zip",
+  "mapping": "unicode",
+  "title": "Yatra One",
+  "deva_cell_ratio": 0.77,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  }
+ }
+]

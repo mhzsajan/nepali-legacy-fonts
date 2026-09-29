@@ -299,6 +299,7 @@ def build_map(slug, html=None, order=None):
 
     character_map = {}
     problems = []
+    dropped = []
 
     for frag, slots in order.items():
         keys = tables.get(frag)
@@ -333,6 +334,17 @@ def build_map(slug, html=None, order=None):
                 key = key[len(ka_key):]
                 if not key:
                     continue
+            # A cell that is already Devanagari is not a key at all. aNepali
+            # publishes one for the three slots Preeti has no key for --
+            # consonant slots 4, 9 and 35, which are NG, NYA and JNYA -- on
+            # every legacy page. Recorded as a key it would ask the transcoder
+            # to emit Devanagari into a font that has zero Devanagari
+            # codepoints, and those three characters would render as blank
+            # boxes. They are dropped instead, and the validator reports them,
+            # so a word containing JNYA is caught rather than shipped broken.
+            if DEVANAGARI_RE.search(key):
+                dropped.append((frag, uni, key))
+                continue
             # A key may legitimately appear in two categories -- legacy fonts
             # reuse one glyph slot for, say, a digit and a symbol. First
             # claim wins.
@@ -344,6 +356,17 @@ def build_map(slug, html=None, order=None):
         raise SystemExit(
             f"  No keys parsed from {SITE}/font/{slug}/.\n"
             f"  Sections found: {sorted(tables) or 'none'}"
+        )
+
+    # Report the dropped slots rather than letting them pass. A lyric
+    # containing one of these will render that character as a blank box, and
+    # a silent gap in the output is the worst kind of bug to chase later.
+    if dropped:
+        chars = ", ".join(sorted({u for _, u, _ in dropped}))
+        problems.append(
+            f"dropped {len(dropped)} slot(s) the site publishes as Devanagari "
+            f"rather than a key ({chars}): a legacy font has no Devanagari "
+            f"codepoints, so these would render as blank boxes"
         )
 
     layout = {

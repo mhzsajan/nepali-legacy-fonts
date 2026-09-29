@@ -144,19 +144,65 @@ Three changes are needed on the Remotion side; all three are in the fork at
 `remotion still` makes checking a new font a few seconds instead of a full
 render.
 
-## Status
+## Coverage
 
-| Font | Layout | Result |
-|---|---|---|
-| Abhinav | Preeti | Works (pre-existing) |
-| AMS Manthan | generated | **Works** — verified on a rendered frame |
+The whole [aNepali catalogue](https://www.anepali.com) is swept, 214 fonts:
+
+| Class | Count | What it means |
+|---|---:|---|
+| `UNICODE` | 58 | Renders in Chromium as-is. Nothing to do. |
+| `PREETI` | 77 | npttf2utf already has it — `--layout Preeti`. |
+| `GENERATED` | 71 | Layout read from the page — `layouts/<slug>.json`. |
+| `NOTABLE` | 8 | Legacy, but the site publishes no character table. |
+
+```bash
+py scripts/sweep.py                # walk the catalogue, write layouts + sweep.json
+py scripts/sweep.py --report       # summarise without refetching
+py scripts/which_fonts.py "path/to/fonts"   # what do I type for THIS font?
+```
+
+### Verified — all 71 generated layouts
+
+`py scripts/verify_layouts.py --all` downloads each font and checks every
+generated key against that font's real glyph table:
+
+```
+71 passed, 0 failed, 0 not available
+```
+
+All 71 resolve all 69 of their keys to real glyphs. That check catches the
+failure a render cannot: a key that exists in the font but points at the
+*wrong* glyph, which renders the wrong letter rather than an error.
+
+Two of them were additionally confirmed on an actual rendered frame through
+Remotion → Chromium: **AMS Manthan** and **AMS Aakash**, both correct.
+
+### Three characters are not covered
+
+`ङ`, `ञ` and `ज्ञ` have no Preeti key to calibrate from, and aNepali publishes
+those three slots as Devanagari rather than as a key. They are dropped from
+every generated layout and reported, so a word containing `ज्ञ` — the one that
+actually turns up in lyrics — needs checking. They will render as a blank box.
 
 Other layouts (Sagarmatha, Kantipur, PCS NEPALI, FONTASY_HIMALI_TT) remain
-available from `npttf2utf` directly. Verify each font with a rendered frame
-before shipping; `docs/METHOD.md` explains the method and its limits.
+available from `npttf2utf` directly. See `docs/METHOD.md` for what the method
+does and does not prove.
 
-## Licence
+## Fonts included
 
-The generated layouts describe each font's own key encoding as published by
-its author. The **fonts themselves** are not included and keep their authors'
-own terms.
+`fonts/` holds all 214 fonts unpacked from their published archives — 479
+`.ttf` files, ~113 MB. This repository is **private**, for your own use.
+
+> aNepali's own words: *"The fonts presented on this website are their
+> authors' property, and are either freeware, shareware, demo versions or
+> public domain. Please look at the readme-files in the archives or check the
+> indicated author's website for details, and contact him/her if in doubt."*
+
+That is a statement of varying status, not a licence. Each font's terms belong
+to its author, several are demo or shareware, and two are the property of a
+commercial foundry. Private use does not change what you may publish or
+broadcast. **Read the readme in a font's folder before it goes on screen in
+front of an audience** — `docs/FONTS-DIR.md` has the detail.
+
+If a licence matters for a broadcast, the 58 `UNICODE` fonts are mostly SIL
+OFL and cover commercial use outright.
