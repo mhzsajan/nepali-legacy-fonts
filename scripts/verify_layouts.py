@@ -134,9 +134,14 @@ def cached_fetch(url, timeout=30):
                 if html.strip():
                     return html
     time.sleep(PAUSE)  # a live request: pause as if it were a fresh one
-    return charmap.fetch(url, timeout=timeout)
+    return _live_fetch(url, timeout=timeout)
 
 
+# Bound BEFORE the patch below. `charmap.fetch = cached_fetch` makes any later
+# `charmap.fetch(...)` inside cached_fetch call cached_fetch again, which on a
+# fresh clone (.cache/ empty, and it is gitignored) is RecursionError at depth
+# 1000 instead of a download.
+_live_fetch = charmap.fetch
 charmap.fetch = cached_fetch
 
 
