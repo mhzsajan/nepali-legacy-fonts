@@ -1,115 +1,64 @@
-# Remotion patch
+# Using a layout with the renderer
 
-These are the changes `lyric-video-remotion` needs so it can use a generated
-layout. They are already pushed to
-[mhzsajan/lyric-video-remotion](https://github.com/mhzsajan/lyric-video-remotion)
-(commit `95f7fa8`), so if you are on that version you need nothing. They are
-included here so this repo is usable on its own, and as a reference if you
-need to apply them to a different checkout.
+**This repo makes fonts. It does not render videos.** If you are here to
+produce a video, you want
+[mhzsajan/lyric-video-remotion](https://github.com/mhzsajan/lyric-video-remotion).
 
-> **This directory is a snapshot, not an upgrade path.** It was taken at
-> `95f7fa8`, and `lyric-video-remotion` has moved on since — all four
-> features below are already present there, so **`lyric-video-remotion` needs
-> nothing from here.** Copying these files *onto* a current checkout reverts
-> that progress: `render.mjs` alone is 147 lines behind (it would lose
-> `--mode horizontal`, the per-target ends files and more). Use the table
-> below to check whether a change has landed, and port an individual change
-> rather than overwriting a file.
+## What was here, and why it is gone
 
-## What each change is for
+Until 2026-09-29 this repo carried a `remotion-patch/` directory: four copied
+files (`render.mjs`, `scripts/layout_encoder.py`, `scripts/lrc_legacy.py`,
+`src/Root.jsx`) so that the layout generation in this repo was usable on its
+own.
 
-| File | Change | Why |
-|---|---|---|
-| `layout_encoder.py` | `load_extra_layouts(path)` | Merges a generated layout so the transcoder can target a font outside npttf2utf's five. |
-| `lrc_legacy.py` | `--layout-file` | Passes that file through from the CLI. |
-| `render.mjs` | `--layout-file`, `--layout` | Chooses which layout a legacy font speaks. |
-| `render.mjs` | `--gpu` | NVENC via bitrate mode. |
-| `render.mjs` | `--prepare-only` | Transcode and register the font, skip the render. |
-| `src/Root.jsx` | preview length cap in `calculateMetadata` | Fixes a crash that made **every** preview fail. |
+It was removed, for two reasons that only became clear together:
 
-## The two bugs that made the whole path unusable
+1. **It was already stale.** The snapshot was taken at `95f7fa8`; the renderer
+   has moved on, so all four features were already upstream and the copy was
+   147 lines behind `render.mjs` alone. Copying it over a current checkout is a
+   *revert*.
+2. **A copy of a renderer inside a font repo cannot be maintained.** It drifted
+   silently and nothing failed — the files are not imported, they are dead
+   weight that looks authoritative.
 
-Neither is about fonts, and both blocked everything before a font could even
-be tried.
+The split is now: this repo answers *what can this font write*, the renderer
+answers *how do I draw it*. Neither keeps a copy of the other.
 
-### 1. `npttf2utf` was never a dependency
+## Getting a layout into a render
 
-`scripts/layout_encoder.py` reads its five layouts from
-`npttf2utf`'s `map.json`. With the package absent, every `--legacy-font`
-render died at once:
-
-```
-FileNotFoundError: 'C:\...\scripts\map.json'
-```
-
-Nothing about that message says "install a Python package", which is a large
-part of why this looked unfixable. Now:
+The renderer reads a layout straight from this repo's `layouts/`. There is no
+vendored copy anywhere, which is deliberate — a vendored layout goes stale the
+moment this repo regenerates it, and nothing warns you.
 
 ```bash
-pip install fonttools npttf2utf pillow
+# point the renderer at a layout from this repo
+node render.mjs song.mp3 song.lrc --no-audio \
+    --font-slug ams-manthan          # resolves font + layout together
 ```
 
-### 2. Every preview render crashed
-
-`render.mjs` passed `--frames=0-<lastCue + 2s>`, computed from a different
-number than the composition's own duration, which `calculateMetadata` derives
-from `max(audio length, last cue)`. Whenever a song's audio is shorter than
-its own last cue plus two seconds, the range ran past the end and Remotion
-refused:
-
-```
-Error: The "durationInFrames" of the <Composition /> was evaluated to be
-6257, but frame range 0-6259 is not within the frame range of the
-composition (0-6256).
-```
-
-Allare is exactly that case — 417.0 s of audio against a 415.3 s last cue. The
-cap now lives in `calculateMetadata`, so one place owns the length and the two
-cannot drift apart again.
-
-## Applying to another checkout
-
-Copy the four files over the originals. They are self-contained: no new
-package, no new npm dependency.
-
-> **Not for `lyric-video-remotion` itself.** Against that repo these commands
-> are a *revert* — run them only against a checkout that predates `95f7fa8`,
-> or against a fork that never received these changes. Check first:
-> `git log --oneline 95f7fa8..HEAD -- render.mjs` returning anything means the
-> target already has more than this snapshot does.
+Or give the two paths directly:
 
 ```bash
-cp remotion-patch/render.mjs            <repo>/render.mjs
-cp remotion-patch/scripts/layout_encoder.py <repo>/scripts/layout_encoder.py
-cp remotion-patch/scripts/lrc_legacy.py  <repo>/scripts/lrc_legacy.py
-cp remotion-patch/src/Root.jsx           <repo>/src/Root.jsx
-```
-
-## Using a generated layout
-
-This repo's `layouts/` already holds **79 verified layouts** — check there
-before generating one (see [README](../README.md#preferred-fonts) for the
-42-font preferred list). The example below uses `ams-manthan.json` because it
-is the worked case.
-
-```bash
-# 1. check the cues -- instant, no render
-node render.mjs song.mp3 song.lrc --report-only
-
-# 2. transcode and register the font, skip the render
-node render.mjs song.mp3 song.lrc --legacy-font fonts/ams.manthan/ams.manthan.ttf \
-    --layout-file layouts/ams-manthan.json --prepare-only
-
-# 3. look at ONE frame before committing to a full render
-npx remotion still src/index.js LyricOverlay out/check.png --frame=5900 --props=out/props.json
-
-# 4. the real thing
 node render.mjs song.mp3 song.lrc --no-audio \
     --legacy-font fonts/ams.manthan/ams.manthan.ttf \
-    --layout-file layouts/ams-manthan.json \
-    --mode roam --word-anim karaoke --letter-anim pop --letter-var 0.03
+    --layout-file layouts/ams-manthan.json
 ```
 
-Step 3 costs seconds and is the step that catches a wrong font. A wrong map
-does not error — it renders the wrong letters, which is exactly the failure
-that is easy to miss in a four-minute video.
+The renderer's [docs/FONTS.md](https://github.com/mhzsajan/lyric-video-remotion/blob/main/docs/FONTS.md)
+covers the render-side workflow, including the two bugs that made the legacy
+path unusable at all (`npttf2utf` never being a dependency, and every preview
+crashing on a frame range past the composition's own duration). Both are fixed
+upstream and both write-ups moved with the code they describe.
+
+## Before you render
+
+Check the font against the *song*, not just against itself. Every layout in
+this repo passes verification, and a verified layout still cannot write a song
+containing a virama or a candrabindu:
+
+```bash
+py scripts/check_song.py --font ams-manthan song.lrc
+```
+
+See [SONG-CHECK.md](SONG-CHECK.md) for why that check is separate from
+`verify_layouts.py`, and what it catches that nothing else does.
