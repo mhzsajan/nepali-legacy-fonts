@@ -1,0 +1,3 @@
+fonttools>=4.0
+npttf2utf>=0.3.7
+pillow>=10.0
