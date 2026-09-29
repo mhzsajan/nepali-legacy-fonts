@@ -37,6 +37,11 @@ The short version:
   only.**
 - **42 of 42 preferred fonts are usable.** 29 `GENERATED` (layout file in
   `layouts/`), 10 `PREETI` (`--layout Preeti`), 3 `UNICODE` (`--font`).
+- **The order of that list is effort, not safety — do not take the first
+  entry as the recommendation.** Recommended order: **`Arya`, `Kalam`,
+  `Rajdhani`** first (Unicode, nothing to get wrong); then **`AMS Aakash`**
+  if a classic legacy look is required, being the only preferred font
+  confirmed on a rendered frame; then the rest.
 - **79 of 214** fonts are `GENERATED` overall;
   `py scripts/verify_layouts.py --all` reports **79 passed, 0 failed**. The
   `NOTABLE` class is empty — nothing needs a hand-written map.

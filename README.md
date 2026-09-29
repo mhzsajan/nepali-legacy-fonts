@@ -251,6 +251,19 @@ A curated shortlist of 42 fonts, grouped by how much work each one is. **Every
 entry is usable as-is** — 29 have a generated layout in this repo, 10 speak
 Preeti, 3 are already Unicode.
 
+> **Pick from here, in this order. The tables below are grouped by *effort*,
+> not by *safety* — the first font listed is not the best answer.**
+>
+> 1. **`Arya`, `Kalam`, `Rajdhani`** — Unicode. Nothing to transcode, no
+>    layout that can be wrong. This is the answer to *"which font should I
+>    use?"* and to *"which font works without issue"* — see **Tier A**.
+> 2. **`AMS Aakash`** — when you specifically want a classic legacy look.
+>    It is the only font on this list **confirmed on a rendered frame**;
+>    verification alone cannot tell `द` from `ध`, so every other entry here
+>    is verified but not proven.
+> 3. Everything else on the list — verified against its `.ttf`, but it
+>    inherits the five unfixable characters below.
+
 ```bash
 py scripts/which_fonts.py "C:\path\to\fonts"   # resolves a file to its slug
 ```
