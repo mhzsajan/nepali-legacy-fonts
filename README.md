@@ -312,19 +312,57 @@ py scripts/which_fonts.py "C:\path\to\fonts"   # resolves a file to its slug
 | Kalam | `--font "Kalam"` |
 | Rajdhani | `--font "Rajdhani"` |
 
-Notes on this list:
+### Status — what is fixed, what is not
 
-- **AMS 1, 2, 4, 5 and 7 were the blocked ones.** They were `NOTABLE` — listed
-  as having no character table — because the parser asked for `font-ams-1`
-  while the page paints `font-ams-calligraphy-1`. Fixed by resolving the
-  class from the page; all five now verify against their own `.ttf` like
-  every other generated layout.
-- **The three Unicode fonts are the safest pick** for anything live: no
-  transcoding, so no layout can be wrong.
-- The 39 legacy entries inherit the known gaps in
-  [`docs/LEGACY-PITFALLS.md`](docs/LEGACY-PITFALLS.md) — `ङ`, `ञ`, `ज्ञ`,
-  the virama and the candrabindu are not in any layout, so a word containing
-  one draws those characters in a fallback font.
+Read this before picking a font. "Usable" and "proven" are not the same thing
+here, and the difference is silent wrong letters, not an error.
+
+| Item | Status | Evidence |
+|---|---|---|
+| All **42 preferred fonts usable** | ✅ **FIXED** | `verify_layouts.py --all` → **79 passed, 0 failed** |
+| AMS 1, 2, 4, 5, 7 — were `NOTABLE`, blocked | ✅ **FIXED** | 69 keys each, **0 missing** against the real `.ttf` |
+| AMS 6, 8, 9 — the other 3 `NOTABLE` (not on your list) | ✅ **FIXED** | same check, same result |
+| `NOTABLE` class | ✅ **EMPTY** | 214 of 214 fonts have a usable path |
+| Every key resolves to a real glyph in that font's `.ttf` | ✅ **VERIFIED** | all 79, checked against the binary |
+| Every key resolves to the *correct* glyph | ⚠️ **PARTIAL** | only **AMS Manthan** and **AMS Aakash** confirmed on a rendered frame |
+| `ङ`, `ञ`, `ज्ञ` | ❌ **NOT FIXED — cannot be** | aNepali publishes those three slots as Devanagari, not as a key |
+| virama `्`, candrabindu `ँ` | ❌ **NOT FIXED** | same cause; found by rendering songs, not by any word list |
+| Symbols / punctuation mapping | ⛔ **DELIBERATELY NOT DONE** | not calibratable across pages; legacy fonts already keep punctuation on ASCII |
+| Fonts rebuilt as Unicode | ⛔ **DELIBERATELY NOT DONE** | would need a `cmap` + GSUB with no ground truth |
+
+**What an agent must not claim:** that a layout is *proven correct*. The
+verifier proves the encoder is self-consistent and every key reaches a real
+glyph. It cannot tell `द` from `ध`. The only check that can is one rendered
+frame, and **only two fonts have had one**.
+
+**The five ❌/⛔ rows apply to all 39 legacy entries on this list**, not to
+the 3 Unicode ones. A word containing one of those characters comes out
+drawn in a fallback typeface mid-word, with no error — check
+[`docs/LEGACY-PITFALLS.md`](docs/LEGACY-PITFALLS.md) for the measured
+counts (34 of 110 real words needed a character no AMS layout exposes).
+
+**Zero-risk choice:** `Arya`, `Kalam`, `Rajdhani`. Unicode, so nothing to
+transcode and no layout that can be wrong.
+
+### Slugs, for tooling
+
+The table above is the human view; these are the slugs `--layout-file` and
+`which_fonts.py` expect:
+
+```
+GENERATED (29)  ams-1 ams-2 ams-4 ams-5 ams-7 ams-aaditya ams-aakash
+                ams-aakul-4 ams-aakul-5 ams-aasmi ams-barakhadi-1
+                ams-chandrakant ams-chhatrapati ams-darshana ams-diya
+                ams-ganesha ams-gourav-bold ams-harshdeep ams-hastkala
+                ams-hastkala-1 ams-jiwan ams-kartik ams-karuna
+                ams-kasturi-1 ams-lekhan-1 ams-lekhan-1-bold ams-lekhan-4
+                ams-lekhan-5 ams-manoja
+
+PREETI   (10)   0012-arap 0017-arap ananda-fanko-2 arap-010 arap007
+                cv-haha deepankar ganga-1 mkali pawang
+
+UNICODE  (3)    arya kalam rajdhani        → --font "Arya" / "Kalam" / "Rajdhani"
+```
 
 ## Licensing
 
