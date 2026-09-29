@@ -95,6 +95,32 @@ look at the text. Full write-up: **[docs/SONG-CHECK.md](docs/SONG-CHECK.md)**.
 
 Also: `--word "फर्केर" --font ams-manthan` tests one word instead of a file.
 
+### Why no renderer or engine can fix this
+
+Asked whether patching Remotion, switching engines, or rebuilding the fonts
+would work. Measured answer, with rendered evidence in
+[`docs/GLYPH-INVENTORY.md`](docs/GLYPH-INVENTORY.md):
+
+- **Remotion has no font code.** Shaping is Chromium's (HarfBuzz) job; Remotion
+  draws React components to frames. There is nothing there to patch.
+- **No engine helps.** HarfBuzz, DirectWrite, CoreText, Pango and Skia all
+  require a Devanagari `cmap` and `GSUB`/`GPOS`. These fonts have **0**
+  Devanagari codepoints and **no** shaping tables.
+- **The conjuncts are already in the files.** Abhinav's widest glyphs are
+  `र्या`, `ख्याल`, `स्याल`, `ध्य`, `ज्ञ`, `श्र`, `ह्र`, `स्र`, `क्र` — single
+  pre-drawn outlines, addressed by ASCII keys, exactly as a Preeti-era font
+  should work. AMS Manthan has 131 real glyphs behind 69 published keys.
+
+So the gap is **discovery, not drawing**: aNepali's table names 69 slots and
+omits the conjunct section. Labelling the unlabelled remainder is the only route
+that adds coverage, and it is bounded — about 20 minutes of human labelling per
+font, once.
+
+```bash
+py scripts/specimen_glyphs.py AMS-Manthan <font>.ttf out/glyphs.png   # every glyph
+py scripts/specimen_widest.py Abhinav      <font>.ttf out/widest.png  # widest 30%
+```
+
 ---
 
 ## The problem this repo solves
@@ -344,6 +370,7 @@ The **layouts** are the derived work here and carry no separate licence question
 
 | File | What it is for |
 |---|---|
+| **[docs/GLYPH-INVENTORY.md](docs/GLYPH-INVENTORY.md)** | **What is actually inside the font files — and why no engine can fix this.** |
 | **[docs/SONG-CHECK.md](docs/SONG-CHECK.md)** | **Why a verified layout still cannot write your lyrics.** Start here. |
 | [docs/GETTING-STARTED.md](docs/GETTING-STARTED.md) | Install and first use |
 | [AGENTS.md](AGENTS.md) | For an AI agent, and the Windows traps |
