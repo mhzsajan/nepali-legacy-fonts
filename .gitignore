@@ -1,17 +1,26 @@
-# .cache holds the fetched aNepali HTML pages: ~214 files, several MB, and
-# pure build product. It makes a re-run of sweep.py free instead of 214
-# requests, but it is regenerated in a minute and has no business in history.
+# Windows PowerShell
+*.ps1
+Thumbs.db
+desktop.ini
+
+# Page cache: ~214 fetched HTML files, several MB, pure build product.
+# Makes a re-run of sweep.py free instead of 214 requests, but regenerates
+# in a minute and has no business in history.
 .cache/
 
 # Render and conversion output.
 out/
+dist/
 verify.json
 
-# Packaged installers, editor and OS droppings.
-Thumbs.db
-desktop.ini
+# Editor and OS droppings.
 .DS_Store
 __pycache__/
 *.pyc
+*.pyo
 *.log
 *.bak
+*.tmp
+.env
+.venv/
+venv/
