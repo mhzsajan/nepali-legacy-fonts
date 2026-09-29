@@ -180,7 +180,7 @@ song does is a real defect, and it is invisible in a spot check.
 | Setup | `--font "Nirmala UI"` | layout file + map + Python |
 | Characters that can fail | none | 3, affecting ~⅓ of words |
 | Wrong-typeface strays | impossible | the default failure mode |
-| Map bugs to maintain | zero | one per font, times 71 |
+| Map bugs to maintain | zero | one per font, times 79 |
 | Needs the same machine | no | yes, for the tooling |
 
 The legacy tooling in this repository is correct and verified for what it

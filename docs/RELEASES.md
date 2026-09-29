@@ -6,9 +6,8 @@ Five archives, split by what a font needs to work.
 |---|---:|---:|---|
 | `nepali-fonts-unicode.zip` | 94 MB | 58 | Install the font, then `--font "<family>"`. No transcoding, no layout file. |
 | `nepali-fonts-preeti.zip` | 5 MB | 77 | `--legacy-font <file>` with `--layout Preeti`. |
-| `nepali-fonts-generated.zip` | 14 MB | 71 | `--legacy-font <file>` with `--layout-file layouts/<slug>.json`. Layouts are inside. |
-| `nepali-fonts-notable.zip` | 0.4 MB | 8 | No layout is published for these; they need a hand-written map. |
-| `nepali-fonts-layouts-only.zip` | 40 KB | — | The 71 layout files alone, with no fonts. |
+| `nepali-fonts-generated.zip` | 14 MB | 79 | `--legacy-font <file>` with `--layout-file layouts/<slug>.json`. Layouts are inside. |
+| `nepali-fonts-layouts-only.zip` | 40 KB | — | The 79 layout files alone, with no fonts. |
 
 **If a font is for a show, start with the Unicode archive.** Those 58 render in
 Chromium with no transcoding at all, and they are mostly SIL OFL — a licence
@@ -29,7 +28,7 @@ Downloads the font and checks every key in its layout against that font's real
 glyph table. Current state:
 
 ```
-71 passed, 0 failed
+79 passed, 0 failed
 ```
 
 ## Reading a frame

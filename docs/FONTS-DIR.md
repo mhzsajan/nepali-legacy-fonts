@@ -37,8 +37,8 @@ What to do before a font goes on screen in front of an audience:
 |---|---:|---|
 | `UNICODE` | 58 | Install, then `--font "<family>"`. No transcoding, no layout file. |
 | `PREETI` | 77 | `--legacy-font` with `--layout Preeti`. |
-| `GENERATED` | 71 | `--legacy-font` with `--layout-file layouts/<slug>.json`. |
-| `NOTABLE` | 8 | Legacy with no published character table. No generated layout. |
+| `GENERATED` | 79 | `--legacy-font` with `--layout-file layouts/<slug>.json`. |
+| `NOTABLE` | 0 | Was 8 — the `AMS Calligraphy` fonts. All recovered; see the README. |
 
 `py scripts/which_fonts.py fonts/` prints the exact command for any font in
 here.

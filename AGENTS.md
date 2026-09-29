@@ -104,7 +104,7 @@ calibrate_slots.py   prove the slot order (run when a font looks wrong)
 diff_slots.py        compare two font pages side by side
 font_survey.py       classify a folder of fonts
 layout_probe.py      group fonts by outline profile
-layouts/<slug>.json  71 generated maps
+layouts/<slug>.json  79 generated maps
 fonts/<slug>/        214 fonts, ~113 MB, gitignored content is documented
 sweep.json           the catalogue with each font's class
 ```
@@ -118,7 +118,10 @@ sweep.json           the catalogue with each font's class
 
 If the page publishes no character table, the tool says `NOTABLE` and refuses
 to invent a layout. That is the correct outcome — such a font needs a
-hand-written map, and the tool should not pretend otherwise.
+hand-written map, and the tool should not pretend otherwise. No font is in that
+state today: the eight `AMS Calligraphy` fonts that were are now `GENERATED`,
+because the cell CSS class is resolved from the page by `table_class()` instead
+of being assumed to equal `font-<slug>`.
 
 ## Before using any legacy font, check it will not corrupt words
 
