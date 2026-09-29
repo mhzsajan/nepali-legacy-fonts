@@ -146,14 +146,71 @@ def parse_slugs(html):
     return list(out)
 
 
+# CSS utilities that also begin with "font-" but name a weight or a generic
+# family, not a typeface from the catalogue. Tailwind's `font-bold` is not a
+# font called Bold.
+_STYLE_TOKENS = {
+    "font-sans", "font-serif", "font-mono", "font-size",
+    "font-thin", "font-extralight", "font-light", "font-normal",
+    "font-medium", "font-semibold", "font-bold", "font-extrabold",
+    "font-black",
+}
+
+
+def table_class(html, slug):
+    """The CSS class the page paints THIS font's table cells with.
+
+    It is not always "font-" + slug. The catalogue slug for AMS Calligraphy 1
+    is `ams-1`, but the page renders its cells as `font-ams-calligraphy-1`, so
+    asking for `font-ams-1` finds zero cells and the font is then classified
+    "the page publishes no character table" -- which is exactly how 8 fully
+    documented fonts came to be listed as NOTABLE.
+
+    The class is read off the page rather than guessed from the title (the
+    titles are no better: ams-calligraphy-9's real page is
+    ams-calligraphy-9-2). It is the token present on cells under EVERY
+    calibratable heading, so a utility class sitting in one section cannot win
+    an intersection. The slug's own class is preferred whenever it is present,
+    so the fonts that already worked read exactly as they did before.
+    """
+    default = "font-" + slug
+    wanted = [frag for frag, _ in SECTIONS]
+    common = None
+    for head_html, body in re.findall(
+        r"<h3[^>]*>(.*?)</h3>(.*?)(?=<h3|\Z)", html, re.S
+    ):
+        if not any(frag in strip_tags(head_html) for frag in wanted):
+            continue
+        toks = set()
+        for cl in re.findall(r'<span[^>]*?class="([^"]*)"', body):
+            for t in cl.split():
+                if t.startswith("font-") and t not in _STYLE_TOKENS:
+                    toks.add(t)
+        if not toks:
+            continue
+        common = toks if common is None else (common & toks)
+
+    if not common:
+        return default
+    if default in common:
+        return default
+    if len(common) == 1:
+        return common.pop()
+    # Several candidates survived: the one the page uses most is the font.
+    counts = {t: len(re.findall(r'<span[^>]*?\b' + re.escape(t) + r'\b', html))
+              for t in common}
+    return max(counts, key=counts.get)
+
+
 def read_table(html, slug):
     """Pull the key lists per category from one font page.
 
-    Every cell is <span class="... font-<slug>">KEY</span>. Cells are grouped
-    by the nearest preceding <h3>, so the section boundaries come from the
-    page rather than from a guess about how many keys each category has.
+    Every cell is <span class="... font-X">KEY</span>, where X is resolved by
+    table_class. Cells are grouped by the nearest preceding <h3>, so the
+    section boundaries come from the page rather than from a guess about how
+    many keys each category has.
     """
-    cls = "font-" + slug
+    cls = table_class(html, slug)
     sections = re.findall(
         r"<h3[^>]*>(.*?)</h3>(.*?)(?=<h3|\Z)", html, re.S
     )
