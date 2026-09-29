@@ -27,6 +27,14 @@ before recommending a font to anyone.
 
 The short version:
 
+- **Three tiers, and only one cannot go wrong.**
+  [`README.md` — "Which fonts work without issue"](README.md#which-fonts-work-without-issue)
+  has the table and all 58 names:
+  **Tier A (58 `UNICODE`)** — native codepoints, nothing to get wrong;
+  **Tier B (79 `GENERATED`)** and **Tier C (77 `PREETI`)** — verified, but
+  carry the five characters below.
+  **If you are asked for a font that works without issue, answer from Tier A
+  only.**
 - **42 of 42 preferred fonts are usable.** 29 `GENERATED` (layout file in
   `layouts/`), 10 `PREETI` (`--layout Preeti`), 3 `UNICODE` (`--font`).
 - **79 of 214** fonts are `GENERATED` overall;

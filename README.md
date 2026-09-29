@@ -344,6 +344,36 @@ counts (34 of 110 real words needed a character no AMS layout exposes).
 **Zero-risk choice:** `Arya`, `Kalam`, `Rajdhani`. Unicode, so nothing to
 transcode and no layout that can be wrong.
 
+### Which fonts work without issue
+
+"Usable" is not one thing here. Three tiers, and only the first one is
+incapable of producing a wrong character:
+
+| Tier | Fonts | What can still go wrong |
+|---|---|---|
+| **A — no issue possible** | **58 `UNICODE`** | Nothing. Native Devanagari codepoints, no transcoding, no layout file to be wrong. |
+| **B — verified, 5 known gaps** | **79 `GENERATED`** | `ङ`, `ञ`, `ज्ञ`, `्`, `ँ` are in no layout — they render in a **fallback typeface mid-word**, silently. |
+| **C — verified, 5 known gaps, map external** | **77 `PREETI`** | Same five, plus the map lives in the `npttf2utf` package, not in this repo. |
+
+**If you are asked for a font that works without issue, answer from Tier A
+only.** Tier B and C are verified — every key reaches a real glyph in that
+font's `.ttf` — but verification cannot cover the five characters aNepali
+never publishes as a key, and there is no way to add them from this source.
+
+The 58 Tier A fonts (one per name, comma separated):
+
+> Akshar, Alkatra, Amiko, Amita, Anek Devanagari, Annapurna SIL, Arya, Asar, Bakbak One,
+> Baloo 2, Biryani, Cambay, Dekko, Eczar, Gajraj One, Glegoo, Gotu, Halant, Hind,
+> IBM Plex Sans Devnagari, Inknut Antiqua, Jaini, Jaini Purva, Jaldi, Kadwa, Kalam, Karma,
+> Khand, Khula, Kurale, Laila, Martel, Martel Sans, Matangi, Modak, Mukta,
+> Noto Sans Devanagari, Noto Serif Devanagari, Palanquin, Palanquin Dark, Pragati Narrow,
+> Rajdhani, Ranga, Rhodium Libre, Rozha One, Sahitya, Sarala, Sarpanch, Sumana, Sura, Teko,
+> Tillana, Tiro Devanagari Hindi, Tiro Devanagari Marathi, Tiro Devanagari Sanskrit,
+> Vesper Libre, Yantramanav, Yatra One
+
+Of the 42 preferred fonts: **Arya, Kalam, Rajdhani** are Tier A. The other 39
+are Tier B or C and carry the five gaps above.
+
 ### Slugs, for tooling
 
 The table above is the human view; these are the slugs `--layout-file` and
