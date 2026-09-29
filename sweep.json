@@ -157,83 +157,171 @@
  },
  {
   "slug": "ams-1",
-  "class": "NOTABLE",
-  "why": "legacy, but the page publishes no character table",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
   "zip": "AMS_Calligraphy_1.zip",
   "mapping": "ams",
   "title": "AMS 1",
-  "deva_cell_ratio": null,
-  "sections": {}
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams 1"
  },
  {
   "slug": "ams-2",
-  "class": "NOTABLE",
-  "why": "legacy, but the page publishes no character table",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
   "zip": "AMS_Calligraphy_2.zip",
   "mapping": "ams",
   "title": "AMS 2",
-  "deva_cell_ratio": null,
-  "sections": {}
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams 2"
  },
  {
   "slug": "ams-4",
-  "class": "NOTABLE",
-  "why": "legacy, but the page publishes no character table",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
   "zip": "AMS_Calligraphy_4.zip",
   "mapping": "ams",
   "title": "AMS 4",
-  "deva_cell_ratio": null,
-  "sections": {}
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams 4"
  },
  {
   "slug": "ams-5",
-  "class": "NOTABLE",
-  "why": "legacy, but the page publishes no character table",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
   "zip": "AMS_Calligraphy_5.zip",
   "mapping": "ams",
   "title": "AMS 5",
-  "deva_cell_ratio": null,
-  "sections": {}
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams 5"
  },
  {
   "slug": "ams-6",
-  "class": "NOTABLE",
-  "why": "legacy, but the page publishes no character table",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
   "zip": "AMS_Calligraphy_6.zip",
   "mapping": "ams",
   "title": "AMS 6",
-  "deva_cell_ratio": null,
-  "sections": {}
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams 6"
  },
  {
   "slug": "ams-7",
-  "class": "NOTABLE",
-  "why": "legacy, but the page publishes no character table",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
   "zip": "AMS_Calligraphy_7.zip",
   "mapping": "ams",
   "title": "AMS 7",
-  "deva_cell_ratio": null,
-  "sections": {}
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams 7"
  },
  {
   "slug": "ams-8",
-  "class": "NOTABLE",
-  "why": "legacy, but the page publishes no character table",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
   "zip": "AMS_Calligraphy_8.zip",
   "mapping": "ams",
   "title": "AMS 8",
-  "deva_cell_ratio": null,
-  "sections": {}
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams 8"
  },
  {
   "slug": "ams-9",
-  "class": "NOTABLE",
-  "why": "legacy, but the page publishes no character table",
+  "class": "GENERATED",
+  "why": "declared ams; layout must be read",
   "zip": "AMS_Calligraphy_9.zip",
   "mapping": "ams",
   "title": "AMS 9",
-  "deva_cell_ratio": null,
-  "sections": {}
+  "deva_cell_ratio": 0.05,
+  "sections": {
+   "(Vowels)": 13,
+   "(Consonants)": 36,
+   "(Numbers)": 10,
+   "(Matras": 13,
+   "(Symbols": 29
+  },
+  "keys": 69,
+  "problems": [
+   "dropped 3 slot(s) the site publishes as Devanagari rather than a key (ङ, ज्ञ, ञ): a legacy font has no Devanagari codepoints, so these would render as blank boxes"
+  ],
+  "layout": "Ams 9"
  },
  {
   "slug": "ams-aaditya",

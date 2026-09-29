@@ -72,18 +72,33 @@ is wrong — the one failure mode that matters here.
 |---|---:|---|
 | `UNICODE` | 58 | Renders as-is. No transcoding. **Mostly SIL OFL.** |
 | `PREETI` | 77 | npttf2utf already has it — `--layout Preeti`. |
-| `GENERATED` | 71 | Layout read from the page. **All 71 verified.** |
-| `NOTABLE` | 8 | Legacy, but no character table is published. |
+| `GENERATED` | 79 | Layout read from the page. **All 79 verified.** |
+| `NOTABLE` | 0 | Was 8. The class is now empty — see below. |
 
 ```bash
 py scripts/verify_layouts.py --all
-# 71 passed, 0 failed, 0 not available
+# 79 passed, 0 failed, 0 not available
 ```
 
 This downloads each font and checks every key against **that font's real glyph
 table** — the check a render cannot do, since a key can exist and still point
 at the *wrong* glyph. Two fonts are additionally confirmed on rendered frames
 through Remotion: **AMS Manthan** and **AMS Aakash**.
+
+### How `NOTABLE` emptied out
+
+Eight fonts — `AMS Calligraphy 1`–`9` — were listed as *legacy, but the page
+publishes no character table*. That was wrong: the tables were there all
+along. The parser built its CSS selector from the catalogue **slug** (`ams-1`
+→ `font-ams-1`), but aNepali paints those cells with a class derived from the
+**family name** (`font-ams-calligraphy-1`), so the lookup found zero cells and
+read a fully documented font as undocumented.
+
+`anepali_charmap.table_class()` now resolves the class from the page itself —
+the token present on cells under *every* calibratable heading — instead of
+assuming it. The eight recovered with no other change: each reads the same
+13/36/10/13 slots as every other legacy font and verifies against its own
+`.ttf`. **214 of 214 fonts are now usable**; nothing needs a hand-written map.
 
 ## Downloads
 
@@ -94,12 +109,16 @@ Releases carry one archive per class, so you take only what you need:
 | `nepali-fonts-unicode.zip` | 94 MB | `--font "<family>"` — nothing else needed |
 | `nepali-fonts-preeti.zip` | 5 MB | `--legacy-font` + `--layout Preeti` |
 | `nepali-fonts-generated.zip` | 14 MB | `--legacy-font` + `--layout-file layouts/<slug>.json` |
-| `nepali-fonts-notable.zip` | 0.4 MB | needs a hand-written layout |
-| `nepali-fonts-layouts-only.zip` | 40 KB | the 71 maps, no fonts |
+| `nepali-fonts-layouts-only.zip` | 40 KB | the 79 maps, no fonts |
 
 The generated archive ships **with its layouts inside** — a generated font is
 useless without its map, and shipping them apart is how someone ends up
 rendering Preeti keys into a non-Preeti font.
+
+> **Release note:** the `nepali-fonts-notable.zip` archive is retired. Its 8
+> fonts moved to `GENERATED` with real layouts, so re-cut the archives with
+> `py scripts/make_releases.py` before publishing — the counts above are what
+> the repo now produces, not necessarily what a stale v1.0.0 contains.
 
 ## Using one
 
@@ -156,7 +175,7 @@ mirrored in `remotion-patch/`. See `docs/REMOTION-PATCH.md`.
 
 ## Two things to know before trusting a layout
 
-**Verification is necessary, not sufficient.** All 71 pass, meaning every key
+**Verification is necessary, not sufficient.** All 79 pass, meaning every key
 reaches a real glyph. It cannot prove the glyph is the *right* one. Only a
 rendered frame does.
 
@@ -224,6 +243,125 @@ Teko, Laila, Alkatra, Akshar, Anek Devanagari.
 
 ```bash
 node render.mjs song.mp3 song.lrc --font "Nirmala UI"
+```
+
+## Preferred fonts
+
+A curated shortlist of 42 fonts, grouped by how much work each one is. **Every
+entry is usable as-is** — 29 have a generated layout in this repo, 10 speak
+Preeti, 3 are already Unicode.
+
+```bash
+py scripts/which_fonts.py "C:\path\to\fonts"   # resolves a file to its slug
+```
+
+**GENERATED (29)** — the layout is in this repo, one file per font:
+
+| Font | Use it with |
+|---|---|
+| AMS 1 | `--legacy-font <file> --layout-file layouts/ams-1.json` |
+| AMS 2 | `--legacy-font <file> --layout-file layouts/ams-2.json` |
+| AMS 4 | `--legacy-font <file> --layout-file layouts/ams-4.json` |
+| AMS 5 | `--legacy-font <file> --layout-file layouts/ams-5.json` |
+| AMS 7 | `--legacy-font <file> --layout-file layouts/ams-7.json` |
+| AMS Aaditya | `--legacy-font <file> --layout-file layouts/ams-aaditya.json` |
+| AMS Aakash | `--legacy-font <file> --layout-file layouts/ams-aakash.json` |
+| AMS Aakul 4 | `--legacy-font <file> --layout-file layouts/ams-aakul-4.json` |
+| AMS Aakul 5 | `--legacy-font <file> --layout-file layouts/ams-aakul-5.json` |
+| AMS Aasmi | `--legacy-font <file> --layout-file layouts/ams-aasmi.json` |
+| AMS Barakhadi 1 | `--legacy-font <file> --layout-file layouts/ams-barakhadi-1.json` |
+| AMS Chandrakant | `--legacy-font <file> --layout-file layouts/ams-chandrakant.json` |
+| AMS Chhatrapati | `--legacy-font <file> --layout-file layouts/ams-chhatrapati.json` |
+| AMS Darshana | `--legacy-font <file> --layout-file layouts/ams-darshana.json` |
+| AMS Diya | `--legacy-font <file> --layout-file layouts/ams-diya.json` |
+| AMS Ganesha | `--legacy-font <file> --layout-file layouts/ams-ganesha.json` |
+| AMS Gourav Bold | `--legacy-font <file> --layout-file layouts/ams-gourav-bold.json` |
+| AMS Harshdeep | `--legacy-font <file> --layout-file layouts/ams-harshdeep.json` |
+| AMS Hastkala | `--legacy-font <file> --layout-file layouts/ams-hastkala.json` |
+| AMS Hastkala 1 | `--legacy-font <file> --layout-file layouts/ams-hastkala-1.json` |
+| AMS Jiwan | `--legacy-font <file> --layout-file layouts/ams-jiwan.json` |
+| AMS Kartik | `--legacy-font <file> --layout-file layouts/ams-kartik.json` |
+| AMS Karuna | `--legacy-font <file> --layout-file layouts/ams-karuna.json` |
+| AMS Kasturi 1 | `--legacy-font <file> --layout-file layouts/ams-kasturi-1.json` |
+| AMS Lekhan 1 | `--legacy-font <file> --layout-file layouts/ams-lekhan-1.json` |
+| AMS Lekhan 1 Bold | `--legacy-font <file> --layout-file layouts/ams-lekhan-1-bold.json` |
+| AMS Lekhan 4 | `--legacy-font <file> --layout-file layouts/ams-lekhan-4.json` |
+| AMS Lekhan 5 | `--legacy-font <file> --layout-file layouts/ams-lekhan-5.json` |
+| AMS Manoja | `--legacy-font <file> --layout-file layouts/ams-manoja.json` |
+
+**PREETI (10)** — one flag, no layout file; the map lives in `npttf2utf`:
+
+| Font | Use it with |
+|---|---|
+| 0012 ARAP | `--legacy-font <file> --layout Preeti` |
+| 0017 ARAP | `--legacy-font <file> --layout Preeti` |
+| Ananda Fanko 2 | `--legacy-font <file> --layout Preeti` |
+| ARAP 010 | `--legacy-font <file> --layout Preeti` |
+| ARAP007 | `--legacy-font <file> --layout Preeti` |
+| CV Haha | `--legacy-font <file> --layout Preeti` |
+| Deepankar | `--legacy-font <file> --layout Preeti` |
+| Ganga 1 | `--legacy-font <file> --layout Preeti` |
+| MKali | `--legacy-font <file> --layout Preeti` |
+| PawanG | `--legacy-font <file> --layout Preeti` |
+
+**UNICODE (3)** — no transcoding, no layout file, no legacy pitfalls:
+
+| Font | Use it with |
+|---|---|
+| Arya | `--font "Arya"` |
+| Kalam | `--font "Kalam"` |
+| Rajdhani | `--font "Rajdhani"` |
+
+### Status — what is fixed, what is not
+
+Read this before picking a font. "Usable" and "proven" are not the same thing
+here, and the difference is silent wrong letters, not an error.
+
+| Item | Status | Evidence |
+|---|---|---|
+| All **42 preferred fonts usable** | ✅ **FIXED** | `verify_layouts.py --all` → **79 passed, 0 failed** |
+| AMS 1, 2, 4, 5, 7 — were `NOTABLE`, blocked | ✅ **FIXED** | 69 keys each, **0 missing** against the real `.ttf` |
+| AMS 6, 8, 9 — the other 3 `NOTABLE` (not on your list) | ✅ **FIXED** | same check, same result |
+| `NOTABLE` class | ✅ **EMPTY** | 214 of 214 fonts have a usable path |
+| Every key resolves to a real glyph in that font's `.ttf` | ✅ **VERIFIED** | all 79, checked against the binary |
+| Every key resolves to the *correct* glyph | ⚠️ **PARTIAL** | only **AMS Manthan** and **AMS Aakash** confirmed on a rendered frame |
+| `ङ`, `ञ`, `ज्ञ` | ❌ **NOT FIXED — cannot be** | aNepali publishes those three slots as Devanagari, not as a key |
+| virama `्`, candrabindu `ँ` | ❌ **NOT FIXED** | same cause; found by rendering songs, not by any word list |
+| Symbols / punctuation mapping | ⛔ **DELIBERATELY NOT DONE** | not calibratable across pages; legacy fonts already keep punctuation on ASCII |
+| Fonts rebuilt as Unicode | ⛔ **DELIBERATELY NOT DONE** | would need a `cmap` + GSUB with no ground truth |
+
+**What an agent must not claim:** that a layout is *proven correct*. The
+verifier proves the encoder is self-consistent and every key reaches a real
+glyph. It cannot tell `द` from `ध`. The only check that can is one rendered
+frame, and **only two fonts have had one**.
+
+**The five ❌/⛔ rows apply to all 39 legacy entries on this list**, not to
+the 3 Unicode ones. A word containing one of those characters comes out
+drawn in a fallback typeface mid-word, with no error — check
+[`docs/LEGACY-PITFALLS.md`](docs/LEGACY-PITFALLS.md) for the measured
+counts (34 of 110 real words needed a character no AMS layout exposes).
+
+**Zero-risk choice:** `Arya`, `Kalam`, `Rajdhani`. Unicode, so nothing to
+transcode and no layout that can be wrong.
+
+### Slugs, for tooling
+
+The table above is the human view; these are the slugs `--layout-file` and
+`which_fonts.py` expect:
+
+```
+GENERATED (29)  ams-1 ams-2 ams-4 ams-5 ams-7 ams-aaditya ams-aakash
+                ams-aakul-4 ams-aakul-5 ams-aasmi ams-barakhadi-1
+                ams-chandrakant ams-chhatrapati ams-darshana ams-diya
+                ams-ganesha ams-gourav-bold ams-harshdeep ams-hastkala
+                ams-hastkala-1 ams-jiwan ams-kartik ams-karuna
+                ams-kasturi-1 ams-lekhan-1 ams-lekhan-1-bold ams-lekhan-4
+                ams-lekhan-5 ams-manoja
+
+PREETI   (10)   0012-arap 0017-arap ananda-fanko-2 arap-010 arap007
+                cv-haha deepankar ganga-1 mkali pawang
+
+UNICODE  (3)    arya kalam rajdhani        → --font "Arya" / "Kalam" / "Rajdhani"
 ```
 
 ## Licensing

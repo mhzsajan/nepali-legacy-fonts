@@ -42,6 +42,7 @@ from concurrent.futures import ThreadPoolExecutor
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from anepali_charmap import (  # noqa: E402
     SITE, build_map, parse_slugs, read_table, slot_order, strip_tags,
+    table_class,
 )
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -116,9 +117,13 @@ def page_meta(html, slug):
 
     # Cross-check, and a fallback where the label is missing: a UNICODE font
     # renders its own characters in the table, so the cells come back as
-    # Devanagari. A legacy font's cells are ASCII keys.
+    # Devanagari. A legacy font's cells are ASCII keys. The cell class is
+    # resolved, not assumed to be font-<slug> -- see table_class.
     deva_cells = 0
-    cells = re.findall(r'<span[^>]*\bfont-' + re.escape(slug) + r'\b[^>]*>(.*?)</span>', html)
+    cls = table_class(html, slug)
+    cells = re.findall(
+        r'<span[^>]*\b' + re.escape(cls) + r'\b[^>]*>(.*?)</span>', html
+    )
     for c in cells:
         if re.search(r"[\u0900-\u097f]", strip_tags(c)):
             deva_cells += 1

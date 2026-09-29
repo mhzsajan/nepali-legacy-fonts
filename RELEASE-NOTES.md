@@ -6,9 +6,8 @@ Fonts for Remotion — 214 legacy Nepali fonts with generated, verified layouts.
 |---|---:|---:|---|
 | `nepali-fonts-unicode.zip` | 94 MB | 58 | Install the font, then `--font "<family>"`. No transcoding, no layout file. |
 | `nepali-fonts-preeti.zip` | 5 MB | 77 | `--legacy-font <file>` with `--layout Preeti`. |
-| `nepali-fonts-generated.zip` | 14 MB | 71 | `--legacy-font <file>` with `--layout-file layouts/<slug>.json`. **Layouts are inside.** |
-| `nepali-fonts-notable.zip` | 0.4 MB | 8 | Legacy, but no character table is published; these need a hand-written map. |
-| `nepali-fonts-layouts-only.zip` | 40 KB | — | The 71 layout files alone, no fonts. |
+| `nepali-fonts-generated.zip` | 14 MB | 79 | `--legacy-font <file>` with `--layout-file layouts/<slug>.json`. **Layouts are inside.** |
+| `nepali-fonts-layouts-only.zip` | 40 KB | — | The 79 layout files alone, no fonts. |
 
 **If a font is for a show, start with the Unicode archive.** Those 58 render in
 Chromium with no transcoding at all, and they are mostly SIL OFL — a licence you
@@ -23,7 +22,7 @@ rendering Preeti keys into a non-Preeti font and getting collapsed glyphs.
 Every generated layout was checked against the font binary it describes:
 
 ```
-71 passed, 0 failed
+79 passed, 0 failed
 ```
 
 That proves each key resolves to a real glyph. It does **not** prove the glyph

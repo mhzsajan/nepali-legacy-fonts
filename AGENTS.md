@@ -18,6 +18,36 @@ Read `README.md` for the problem and the reasoning, and `docs/METHOD.md` for
 what the method does and does not prove. `docs/METHOD.md` is the one to read
 before trusting a result.
 
+## Preferred fonts, and what is fixed
+
+**[`README.md` — "Preferred fonts"](README.md#preferred-fonts)** holds a
+curated list of 42 fonts with the exact command for each, a **Status** table
+of what is verified versus what is not, and the slugs for tooling. Read it
+before recommending a font to anyone.
+
+The short version:
+
+- **42 of 42 preferred fonts are usable.** 29 `GENERATED` (layout file in
+  `layouts/`), 10 `PREETI` (`--layout Preeti`), 3 `UNICODE` (`--font`).
+- **79 of 214** fonts are `GENERATED` overall;
+  `py scripts/verify_layouts.py --all` reports **79 passed, 0 failed**. The
+  `NOTABLE` class is empty — nothing needs a hand-written map.
+- **AMS 1, 2, 4, 5 and 7** (all on the preferred list) were blocked as
+  `NOTABLE` because the cell CSS selector was built from the catalogue slug
+  (`font-ams-1`) while aNepali paints `font-ams-calligraphy-1`.
+  `anepali_charmap.table_class()` resolves it from the page now.
+- ⚠️ **Never describe a layout as proven.** Verification proves every key
+  reaches a *real glyph* in that font's `.ttf`. It cannot prove the glyph is
+  the *right* one — `द` and `ध` look nothing alike to a human and nothing
+  alike to a hash. Only **AMS Manthan** and **AMS Aakash** have been
+  confirmed on a rendered frame.
+- ❌ **Broken for every legacy font, and unfixable from the source:**
+  `ङ`, `ञ`, `ज्ञ`, the virama `्` and the candrabindu `ँ`. aNepali publishes
+  those slots as Devanagari rather than as a key, so there is nothing to
+  read. A word containing one renders those characters in a fallback
+  typeface mid-word, with no error. The 3 `UNICODE` preferred fonts
+  (`Arya`, `Kalam`, `Rajdhani`) do not have this problem.
+
 ## First run on a new machine
 
 Nothing here depends on the machine it was built on. Python 3.9+ and Node 16+
@@ -104,7 +134,7 @@ calibrate_slots.py   prove the slot order (run when a font looks wrong)
 diff_slots.py        compare two font pages side by side
 font_survey.py       classify a folder of fonts
 layout_probe.py      group fonts by outline profile
-layouts/<slug>.json  71 generated maps
+layouts/<slug>.json  79 generated maps
 fonts/<slug>/        214 fonts, ~113 MB, gitignored content is documented
 sweep.json           the catalogue with each font's class
 ```
@@ -118,7 +148,10 @@ sweep.json           the catalogue with each font's class
 
 If the page publishes no character table, the tool says `NOTABLE` and refuses
 to invent a layout. That is the correct outcome — such a font needs a
-hand-written map, and the tool should not pretend otherwise.
+hand-written map, and the tool should not pretend otherwise. No font is in that
+state today: the eight `AMS Calligraphy` fonts that were are now `GENERATED`,
+because the cell CSS class is resolved from the page by `table_class()` instead
+of being assumed to equal `font-<slug>`.
 
 ## Before using any legacy font, check it will not corrupt words
 
