@@ -7,6 +7,15 @@ layout. They are already pushed to
 included here so this repo is usable on its own, and as a reference if you
 need to apply them to a different checkout.
 
+> **This directory is a snapshot, not an upgrade path.** It was taken at
+> `95f7fa8`, and `lyric-video-remotion` has moved on since — all four
+> features below are already present there, so **`lyric-video-remotion` needs
+> nothing from here.** Copying these files *onto* a current checkout reverts
+> that progress: `render.mjs` alone is 147 lines behind (it would lose
+> `--mode horizontal`, the per-target ends files and more). Use the table
+> below to check whether a change has landed, and port an individual change
+> rather than overwriting a file.
+
 ## What each change is for
 
 | File | Change | Why |
@@ -63,6 +72,12 @@ cannot drift apart again.
 Copy the four files over the originals. They are self-contained: no new
 package, no new npm dependency.
 
+> **Not for `lyric-video-remotion` itself.** Against that repo these commands
+> are a *revert* — run them only against a checkout that predates `95f7fa8`,
+> or against a fork that never received these changes. Check first:
+> `git log --oneline 95f7fa8..HEAD -- render.mjs` returning anything means the
+> target already has more than this snapshot does.
+
 ```bash
 cp remotion-patch/render.mjs            <repo>/render.mjs
 cp remotion-patch/scripts/layout_encoder.py <repo>/scripts/layout_encoder.py
@@ -71,6 +86,11 @@ cp remotion-patch/src/Root.jsx           <repo>/src/Root.jsx
 ```
 
 ## Using a generated layout
+
+This repo's `layouts/` already holds **79 verified layouts** — check there
+before generating one (see [README](../README.md#preferred-fonts) for the
+42-font preferred list). The example below uses `ams-manthan.json` because it
+is the worked case.
 
 ```bash
 # 1. check the cues -- instant, no render
