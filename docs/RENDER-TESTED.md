@@ -1,88 +1,77 @@
-# Song-tested fonts — what actually rendered a real lyric video correctly
+# Font verdicts — what is usable, and what is merely untested
 
-This is the list to answer from when someone asks *"which font can I make a
-lyric video with?"* It is **not** the layout-verifier's list
-(`verify_layouts.py` = 79/79 pass) and not the preferred-fonts list (42
-entries). It is the list of fonts that rendered an **entire real song** —
-Allare, 35 lines, 6:54, candrabindu + virama + punctuation-heavy — and
-survived a **human eye-check** of the video.
+**`verdicts.json` in the repository root is the authority.** This file explains
+it. It deliberately contains **no font tables** — a table here would be a second
+copy to keep in step, and a second copy is how `abhinav` came to be listed as a
+verified legacy font it is not, and how four PREETI fonts came to sit in a
+"working" list having never been rendered.
 
-Verified ≠ song-tested. `verify_layouts.py` proves keys reach real glyphs;
-`check_song.py` proves the layout has the song's characters; **neither can
-prove the glyphs are the right ones in that font** — only a rendered video
-watched by a human does that. Two fonts below pass every automated check and
-still spell words wrong.
+## Read it
 
-Method, per font: class check in `sweep.json` → round-trip encode → render
-the full song with strict end timings → eye-check the known-hard window
-(1:37–2:25: जाऊ, फर्केर जाऊ, नलाऊ, प्रीति, हो.. म त हावा सँगै आउँछु,
-झुट्टो, सोझो) → human verdict. Renderer: `lyric-studio`'s `render.mjs`
-(see its `docs/FONTS-VERIFIED.md` for the same list from the renderer's
-side). Date of record: **2026-09-30**.
+```bash
+py scripts/check_verdicts.py            # is the data self-consistent?
+py scripts/check_verdicts.py --report   # the four groups, human-readable
+py scripts/check_verdicts.py --json     # for another program to consume
+```
 
-## ✅ WORKING — 11 fonts, safe for lyric videos
+`lyric-studio` calls the `--json` form. It holds no copy of any of this; if you
+find font verdicts in that repository they are stale by definition, and the
+fix belongs here.
 
-**Legacy / PREETI class** — render with `--legacy-font fonts/<slug>/<file>.ttf`
-(resolve the file with `py scripts/which_fonts.py fonts/<slug>/`):
+## The four states
 
-| Font | Slug | Look |
+| state | what it means | what to do |
 |---|---|---|
-| ARAP007 | `arap007` | brush-stroke bold |
-| CV Haha | `cv-haha` | rounded soft |
-| Katmandu | `katmandu` | thin classic serif-like |
-| MKali | `mkali` | thin, light |
-| PawanG | `pawang` | clean bold |
-| Shreenath Bold | `shreenath-bold` | condensed tall display |
-| Himalayabold | `himalayabold` | soft rounded classic |
-| Ananda Lipi Bold BT | `ananda-lipi-bold-bt` | heavy traditional headline |
+| **working** | rendered a full song **and** passed a human eye-check | use it |
+| **broken** | tested, and rejected — `reason` says why | do not use; that is a font bug |
+| **untested** | **no evidence either way** | render it, look at it, then move it |
+| **failed** | cannot write real songs at all (no candrabindu / virama slot) | never use for lyrics |
 
-**Unicode** — render with `--font-file fonts/<slug>/<file>.ttf`; lyrics are
-handed over unchanged, no transcoding, no legacy pitfalls:
+> **Untested is not a pass.** A font nobody has rendered has told you nothing.
+> The states are kept apart because they call for different next actions: a
+> broken font needs a fix or a replacement, an untested font needs ten minutes
+> and a pair of eyes.
 
-| Font | Slug | Look |
-|---|---|---|
-| Arya Bold | `arya` | modern serif-bold |
-| Kalam Bold | `kalam` | handwritten bold |
-| Rajdhani Bold | `rajdhani` | condensed display |
+## What "song-tested" costs to earn
 
-(Yantramanav Black is also pipeline-verified end to end on this song and
-remains the lyric-studio default; it was not part of this user eye-check.)
+It is **not** the layout-verifier's list (`verify_layouts.py`, 79/79 pass) and
+not the preferred-fonts list. Per font: class check in `sweep.json` → round-trip
+encode → render the full song with strict end timings → eye-check the
+known-hard window → human verdict.
 
-## ❌ NOT WORKING for real songs — 34 of the 42 preferred
+Verified ≠ song-tested. `verify_layouts.py` proves keys reach real glyphs.
+`check_song.py` proves the layout has the song's characters. **Neither can prove
+the glyph is the right one** — only a watched render does that, and two fonts
+here pass every automated check and still spell words wrong.
 
-**29 AMS/GENERATED fonts — gate-rejected in seconds.** Their aNepali layouts
-have no candrabindu `ँ` or virama `्` slots, and any real Nepali song needs
-both (`सँगै`, `आउँछु`, `फर्केर`). This is the same finding as
-[SONG-CHECK.md](SONG-CHECK.md), now confirmed per font on a real render:
-AMS 1/2/4/5/7, Aaditya, Aakash, Aasmi, Aakul 4/5, Barakhadi 1, Chandrakant,
-Chhatrapati, Darshana, Diya, Ganesha, Gourav Bold, Harshdeep, Hastkala,
-Hastkala 1, Jiwan, Kartik, Karuna, Kasturi 1, Lekhan 1/1 Bold/4/5, Manoja.
+Renderer: `lyric-studio`'s `render.mjs`. Test song: **Allare** (35 lines, 6:54,
+candrabindu + virama + punctuation-heavy). Date of record: **2026-09-30**.
 
-**5 fonts declared PREETI but cannot speak it** — `0012-arap`, `0017-arap`,
-`ananda-fanko-2`, `arap-010`, `ganga-1`. Their binaries have no ink on the
-Preeti key slots, so the video prints raw ASCII (`hfpm,` instead of जाऊ,)
-**with exit 0 and no error from any gate**. Caught only by a pixel test
-(top-22%-band ink ratio ≈0.089 = raw ASCII vs >0.10 = real Devanagari
-shirorekha) and by eye. **`sweep.json`'s "declared preeti" class is not
-evidence a font can render Preeti keys.**
+## The handpicked 42, accounted for
 
-**2 fonts spell some words wrong at the glyph level** — `deepankar`,
-`abhinav`. Both are genuine PREETI-class fonts; the converter hands them the
-same correct keys the 8 working PREETI fonts render fine, their cmaps cover
-every key, and frame-checks of the known-hard words are correct — yet the
-human spotted wrong spellings elsewhere in the video. This is a defect inside
-the font's own glyph drawing (some key combination it was drawn to render
-incorrectly), **unreachable by any converter fix**. Until the exact words are
-catalogued, treat both as do-not-use for lyric videos.
+7 working, 5 broken (print raw ASCII), 1 broken (wrong glyphs), 29 failed (no
+candrabindu/virama slot), 0 untested. That is 42.
+
+The wrong-glyphs group is **1** of the 42 and **2** overall: `abhinav` is
+broken but is not one of the handpicked. That one off-by-one is what made
+`7 + 29 + 5 + 2` look like 43 against a stated 42. `check_verdicts.py` asserts
+the arithmetic, so the next discrepancy is a red check rather than a paragraph
+of hedging.
+
+Beyond the 42, 166 of the 214 catalogue fonts are untested. Only the 62
+PREETI-class ones are worth a song render: `GENERATED` layouts cannot write
+real songs, and `UNICODE` fonts cannot fail the legacy way.
 
 ## Rules for agents
 
-1. **Answer font recommendations from this file, not from the preferred list.**
-   "Usable as-is" means the plumbing exists, not that the video is correct.
-2. **A class is a claim, not a proof.** 5 of 10 "PREETI" fonts print raw
-   ASCII. If a font has no row in the WORKING table, run the full method
-   above before shipping it.
-3. **The human eye-check is the acceptance test.** Every automated gate
-   passed for deepankar and abhinav; the videos were still wrong.
-4. When a new song's font set is eye-verified, add it to the WORKING table
-   with the date and the song name.
+1. **Answer font questions from `verdicts.json`, and from nowhere else.** No
+   WORKING row means: say so, and offer to test it. Never infer usability from
+   the preferred list, from a class in `sweep.json`, or from a clean
+   round-trip.
+2. **A class is a claim, not a proof.** Five of ten "PREETI" fonts print raw
+   ASCII with exit 0 and no error from any gate.
+3. **The human eye-check is the acceptance test.** Every automated gate passed
+   for `deepankar` and `abhinav`; the videos were still wrong.
+4. **Do not mark a font working without rendering the song and looking at it.**
+   Record the date and the song alongside the verdict.
+5. **Edit `verdicts.json`, not this file.** This file explains the data.
