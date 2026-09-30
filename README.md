@@ -293,6 +293,13 @@ py scripts/which_fonts.py "C:\path\to\fonts"   # resolves a file to its slug
 **UNICODE (3)** — no transcoding, no layout file, no legacy pitfalls: `arya`,
 `kalam`, `rajdhani` → `--font "Arya"` / `"Kalam"` / `"Rajdhani"`.
 
+**Which of these can actually make a lyric video? See
+[`docs/RENDER-TESTED.md`](docs/RENDER-TESTED.md)** — the list of fonts that
+rendered a full real song and passed a human eye-check (11 working, 34 not).
+Key finding: 5 of the 10 PREETI entries above print raw ASCII instead of
+Devanagari, and 2 more draw some words wrong at the glyph level — none of
+which any layout check catches.
+
 ### Status — what is fixed, what is not
 
 "Usable" and "proven" are not the same thing here, and the difference is silent

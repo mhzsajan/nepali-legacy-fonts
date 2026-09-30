@@ -37,6 +37,12 @@ The short version:
   only.**
 - **42 of 42 preferred fonts are usable.** 29 `GENERATED` (layout file in
   `layouts/`), 10 `PREETI` (`--layout Preeti`), 3 `UNICODE` (`--font`).
+- **"Usable" is not "song-tested".** For the list of fonts that have rendered
+  a full real lyric video and passed a human eye-check — currently 11 of the
+  42 — read [`docs/RENDER-TESTED.md`](docs/RENDER-TESTED.md) **before
+  recommending any font for an actual video**. Notably: 5 "PREETI" fonts
+  print raw ASCII with no error, and 2 PREETI fonts (deepankar, abhinav)
+  spell some words wrong at the glyph level despite passing every check.
 - **79 of 214** fonts are `GENERATED` overall;
   `py scripts/verify_layouts.py --all` reports **79 passed, 0 failed**. The
   `NOTABLE` class is empty — nothing needs a hand-written map.
