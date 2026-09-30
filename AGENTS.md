@@ -200,6 +200,66 @@ prints only the `OK ... lines encoded` line.
 
 `docs/LEGACY-PITFALLS.md` covers all of this with measurements.
 
+## There are 58 Unicode fonts, not four — read this before saying "we only have a few"
+
+The most common wrong answer in this repo is that only a handful of fonts are
+usable for a lyric video. **58 of the 214 are `UNICODE`, and every one of them
+is structurally safe** — see "The better answer is usually a Unicode font" below.
+They have native Devanagari codepoints, so there is no key layout to transcode
+into and therefore no way for a word to come out spelled wrongly. That is the
+whole failure mode this repository's tooling exists to prevent, and Tier A does
+not have it.
+
+Only **4 of the 58** had ever been rendered and eye-checked, which is why
+`verdicts.json` lists so few as `working`. That number is a measure of **past
+effort, not of availability**. Reading it as a measure of what is usable is the
+mistake, and it has already cost a plan that was built around "there are not
+seven fonts" when there were fifty-eight.
+
+### Qualifying the rest, in the right order
+
+Two tools, and the order matters — the expensive one is last, on purpose.
+
+```bash
+# 1. MECHANICAL, milliseconds. Reads each font's own cmap and asks whether every
+#    codepoint the real songs use is covered. Filters 214 -> the plausible ones.
+py scripts/qualify_unicode.py "H:\Lyric Video Making Folder"
+
+# 2. VISUAL, one page. Every surviving font, base64-embedded, Chromium-shaped,
+#    showing the SAME three real lyric lines so the typeface is the only variable.
+py scripts/unicode_showcase.py "H:\Lyric Video Making Folder" --per-page 12
+```
+
+`qualify_unicode.py` prints a shortlist and **no verdict**, and that is the point.
+Coverage is necessary and not sufficient: a font can cover every codepoint and
+still set a conjunct badly or put the i-matra on the wrong side. Only a person
+looking at `unicode_showcase.py` output can decide that.
+
+`unicode_showcase.py` exists because fifty-three separate specimen files is the
+wrong shape for "which do you want". It is also the only instrument here that
+shows all the candidates **on the same lines**, so a face can be compared across
+pages. Two things to know about it:
+
+- the fonts are **embedded as base64**, not `src: url(file://...)`. A blocked
+  file-origin fetch fails SILENTLY: the page falls back to Nirmala UI and every
+  row looks identical and perfect. Embedding removes the second fetch.
+- Chrome's `--screenshot` captures the **window, not the page**, so the height
+  is measured from the row count. The first version left it at a default and
+  produced a clean, successful-looking PNG of 14 of 58 fonts.
+
+There is deliberately **no size-based truncation check** in the showcase. One
+existed and fired on every page, because a mostly-black image compresses to
+~0.1 MB whether or not it is complete. A heuristic that is always wrong trains
+you to ignore it.
+
+### What "working" means here, and who decides
+
+`verdicts.json` has four states. `broken` and `failed` are refused. `untested`
+warns and proceeds — **that is the state where testing happens**. Promoting a
+font to `working` requires a rendered frame and a human eye-check, not a script.
+`check_verdicts.py` will accept a `working` you wrote by hand; that is a
+deliberate trust boundary, not an oversight.
+
 ## The better answer is usually a Unicode font
 
 If no specific classic typeface is required, `--font "Nirmala UI"` removes

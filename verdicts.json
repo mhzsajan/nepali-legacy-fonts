@@ -15,64 +15,177 @@
     "Validated by scripts/check_verdicts.py. Prose in docs/RENDER-TESTED.md is",
     "checked against THIS file, not the other way round."
   ],
-
   "schema": 1,
   "updated": "2026-09-30",
   "tested_song": "Allare",
   "tested_detail": "35 lines, 6:54, candrabindu + virama + punctuation-heavy, strict end timings, human eye-check of 1:37-2:25",
-
-  "_states": ["working", "broken", "untested", "failed"],
-
-  "handpicked": [
-    "ams-1", "ams-2", "ams-4", "ams-5", "ams-7",
-    "ams-aaditya", "ams-aakash", "ams-aasmi", "ams-aakul-4", "ams-aakul-5",
-    "ams-barakhadi-1", "ams-chandrakant", "ams-chhatrapati", "ams-darshana",
-    "ams-diya", "ams-ganesha", "ams-gourav-bold", "ams-harshdeep", "ams-hastkala",
-    "ams-hastkala-1", "ams-jiwan", "ams-kartik", "ams-karuna", "ams-kasturi-1",
-    "ams-lekhan-1", "ams-lekhan-1-bold", "ams-lekhan-4", "ams-lekhan-5",
-    "ams-manoja",
-    "0012-arap", "0017-arap", "ananda-fanko-2", "arap-010", "ganga-1",
-    "arap007", "cv-haha", "deepankar", "mkali", "pawang",
-    "arya", "kalam", "rajdhani"
+  "_states": [
+    "working",
+    "broken",
+    "untested",
+    "failed"
   ],
-
+  "handpicked": [
+    "ams-1",
+    "ams-2",
+    "ams-4",
+    "ams-5",
+    "ams-7",
+    "ams-aaditya",
+    "ams-aakash",
+    "ams-aasmi",
+    "ams-aakul-4",
+    "ams-aakul-5",
+    "ams-barakhadi-1",
+    "ams-chandrakant",
+    "ams-chhatrapati",
+    "ams-darshana",
+    "ams-diya",
+    "ams-ganesha",
+    "ams-gourav-bold",
+    "ams-harshdeep",
+    "ams-hastkala",
+    "ams-hastkala-1",
+    "ams-jiwan",
+    "ams-kartik",
+    "ams-karuna",
+    "ams-kasturi-1",
+    "ams-lekhan-1",
+    "ams-lekhan-1-bold",
+    "ams-lekhan-4",
+    "ams-lekhan-5",
+    "ams-manoja",
+    "0012-arap",
+    "0017-arap",
+    "ananda-fanko-2",
+    "arap-010",
+    "ganga-1",
+    "arap007",
+    "cv-haha",
+    "deepankar",
+    "mkali",
+    "pawang",
+    "arya",
+    "kalam",
+    "rajdhani"
+  ],
   "verdicts": {
-    "arap007":  { "state": "working", "class": "PREETI", "look": "brush-stroke bold" },
-    "cv-haha":  { "state": "working", "class": "PREETI", "look": "rounded soft" },
-    "mkali":    { "state": "working", "class": "PREETI", "look": "thin, light" },
-    "pawang":   { "state": "working", "class": "PREETI", "look": "clean bold" },
-    "arya":     { "state": "working", "class": "UNICODE", "look": "modern serif-bold" },
-    "kalam":    { "state": "working", "class": "UNICODE", "look": "handwritten bold" },
-    "rajdhani": { "state": "working", "class": "UNICODE", "look": "condensed display" },
+    "arap007": {
+      "state": "working",
+      "class": "PREETI",
+      "look": "brush-stroke bold"
+    },
+    "cv-haha": {
+      "state": "working",
+      "class": "PREETI",
+      "look": "rounded soft"
+    },
+    "mkali": {
+      "state": "working",
+      "class": "PREETI",
+      "look": "thin, light"
+    },
+    "pawang": {
+      "state": "working",
+      "class": "PREETI",
+      "look": "clean bold"
+    },
+    "arya": {
+      "state": "working",
+      "class": "UNICODE",
+      "look": "modern serif-bold"
+    },
+    "kalam": {
+      "state": "working",
+      "class": "UNICODE",
+      "look": "handwritten bold"
+    },
+    "rajdhani": {
+      "state": "working",
+      "class": "UNICODE",
+      "look": "condensed display"
+    },
     "yantramanav": {
-      "state": "working", "class": "UNICODE", "look": "geometric black",
+      "state": "working",
+      "class": "UNICODE",
+      "look": "geometric black",
       "note": "pipeline-verified end to end; the lyric-studio default. Not part of the 42, and not part of the human eye-check."
     },
-
-    "0012-arap":     { "state": "broken", "class": "PREETI", "reason": "prints-raw-ascii" },
-    "0017-arap":     { "state": "broken", "class": "PREETI", "reason": "prints-raw-ascii" },
-    "ananda-fanko-2":{ "state": "broken", "class": "PREETI", "reason": "prints-raw-ascii" },
-    "arap-010":      { "state": "broken", "class": "PREETI", "reason": "prints-raw-ascii" },
-    "ganga-1":       { "state": "broken", "class": "PREETI", "reason": "prints-raw-ascii" },
-
-    "deepankar": { "state": "broken", "class": "PREETI", "reason": "wrong-glyphs",
-      "note": "Genuine Preeti font. Correct class, clean round-trip, full cmap, correct frame-checks -- and it still spells some words wrong. The defect is inside the font's own glyph drawing and no converter fix reaches it. NOT in the handpicked 42." },
-    "abhinav":   { "state": "broken", "class": "PREETI", "reason": "wrong-glyphs",
-      "note": "Same failure as deepankar. This is the font that was once certified as a verified legacy font on the strength of a clean round-trip. NOT in the handpicked 42." },
-
-    "katmandu":           { "state": "untested", "class": "PREETI", "note": "was wrongly listed as working; never rendered" },
-    "shreenath-bold":     { "state": "untested", "class": "PREETI", "note": "was wrongly listed as working; never rendered" },
-    "himalayabold":       { "state": "untested", "class": "PREETI", "note": "was wrongly listed as working; never rendered" },
-    "ananda-lipi-bold-bt":{ "state": "untested", "class": "PREETI", "note": "was wrongly listed as working; never rendered" }
+    "0012-arap": {
+      "state": "broken",
+      "class": "PREETI",
+      "reason": "prints-raw-ascii"
+    },
+    "0017-arap": {
+      "state": "broken",
+      "class": "PREETI",
+      "reason": "prints-raw-ascii"
+    },
+    "ananda-fanko-2": {
+      "state": "broken",
+      "class": "PREETI",
+      "reason": "prints-raw-ascii"
+    },
+    "arap-010": {
+      "state": "broken",
+      "class": "PREETI",
+      "reason": "prints-raw-ascii"
+    },
+    "ganga-1": {
+      "state": "broken",
+      "class": "PREETI",
+      "reason": "prints-raw-ascii"
+    },
+    "deepankar": {
+      "state": "broken",
+      "class": "PREETI",
+      "reason": "wrong-glyphs",
+      "note": "Genuine Preeti font. Correct class, clean round-trip, full cmap, correct frame-checks -- and it still spells some words wrong. The defect is inside the font's own glyph drawing and no converter fix reaches it. NOT in the handpicked 42."
+    },
+    "abhinav": {
+      "state": "broken",
+      "class": "PREETI",
+      "reason": "wrong-glyphs",
+      "note": "Same failure as deepankar. This is the font that was once certified as a verified legacy font on the strength of a clean round-trip. NOT in the handpicked 42."
+    },
+    "katmandu": {
+      "state": "working",
+      "class": "PREETI",
+      "look": "traditional, upright",
+      "note": "rendered and eye-checked on Allare -- reported by the user as rendering correctly; promoted from untested, replacing a note that wrongly claimed it had never been rendered"
+    },
+    "shreenath-bold": {
+      "state": "working",
+      "class": "PREETI",
+      "look": "bold, slightly condensed",
+      "note": "rendered and eye-checked on Allare -- reported by the user as rendering correctly; promoted from untested, replacing a note that wrongly claimed it had never been rendered"
+    },
+    "himalayabold": {
+      "state": "working",
+      "class": "PREETI",
+      "look": "heavy display, wide counters",
+      "note": "rendered and eye-checked on Allare -- reported by the user as rendering correctly; promoted from untested, replacing a note that wrongly claimed it had never been rendered"
+    },
+    "ananda-lipi-bold-bt": {
+      "state": "untested",
+      "class": "PREETI",
+      "note": "was wrongly listed as working; never rendered"
+    }
   },
-
   "_bulk_verdicts": {
     "_comment": "Rules for whole classes, so 200-odd untested fonts need no rows. A per-font entry always wins over these.",
-    "ams-*":  { "state": "failed", "reason": "no candrabindu or virama slot; cannot write a real Nepali song at all" },
-    "GENERATED": { "state": "failed", "reason": "GENERATED layouts cannot write real songs -- no candrabindu or virama slot" },
-    "default":   { "state": "untested" }
+    "ams-*": {
+      "state": "failed",
+      "reason": "no candrabindu or virama slot; cannot write a real Nepali song at all"
+    },
+    "GENERATED": {
+      "state": "failed",
+      "reason": "GENERATED layouts cannot write real songs -- no candrabindu or virama slot"
+    },
+    "default": {
+      "state": "untested"
+    }
   },
-
   "_reconciliation": {
     "_comment": "The 42 handpicked, accounted for. check_verdicts.py asserts this adds up, because a total that does not close is how a list grows a font nobody tested.",
     "handpicked_total": 42,
@@ -83,5 +196,296 @@
     "untested": 0,
     "_sums_to": 42,
     "_note": "abhinav is broken but NOT handpicked, which is why the broken-wrong-glyphs count here is 1 and not 2. That single off-by-one is what made 7+29+5+2 look like 43."
+  },
+  "preeti_song_safety": {
+    "pawang": {
+      "class": "PREETI",
+      "safe_songs": [
+        "03 Kali Kali BPM 120",
+        "04 Ow Amira BPM 122",
+        "06 Timilai Bhuleko BPM 110"
+      ],
+      "unsafe_songs": {
+        "01 Allare BPM 120": {
+          "leaked_words": [
+            "फर्केर",
+            "फसेन",
+            "फसिँदैन",
+            "फसेन..",
+            "फसिँदैन"
+          ],
+          "uncovered_keys": [
+            "U+00A7"
+          ]
+        },
+        "02 Jam Na Maya Jam BPM 115": {
+          "leaked_words": [],
+          "uncovered_keys": [
+            "U+00CC"
+          ]
+        },
+        "05 Ritu BPM 105": {
+          "leaked_words": [
+            "फर्केर",
+            "फर्केर",
+            "दुईतर्फी"
+          ],
+          "uncovered_keys": []
+        },
+        "07 Wora Para BPM 115": {
+          "leaked_words": [
+            "फर्की",
+            "फर्की",
+            "आफू"
+          ],
+          "uncovered_keys": []
+        }
+      }
+    },
+    "mkali": {
+      "class": "PREETI",
+      "safe_songs": [
+        "03 Kali Kali BPM 120",
+        "04 Ow Amira BPM 122",
+        "06 Timilai Bhuleko BPM 110"
+      ],
+      "unsafe_songs": {
+        "01 Allare BPM 120": {
+          "leaked_words": [
+            "फर्केर",
+            "फसेन",
+            "फसिँदैन",
+            "फसेन..",
+            "फसिँदैन"
+          ],
+          "uncovered_keys": [
+            "U+00A7"
+          ]
+        },
+        "02 Jam Na Maya Jam BPM 115": {
+          "leaked_words": [],
+          "uncovered_keys": [
+            "U+00B6",
+            "U+00CC"
+          ]
+        },
+        "05 Ritu BPM 105": {
+          "leaked_words": [
+            "फर्केर",
+            "फर्केर",
+            "दुईतर्फी"
+          ],
+          "uncovered_keys": []
+        },
+        "07 Wora Para BPM 115": {
+          "leaked_words": [
+            "फर्की",
+            "फर्की",
+            "आफू"
+          ],
+          "uncovered_keys": []
+        }
+      }
+    },
+    "cv-haha": {
+      "class": "PREETI",
+      "safe_songs": [
+        "03 Kali Kali BPM 120",
+        "04 Ow Amira BPM 122",
+        "06 Timilai Bhuleko BPM 110"
+      ],
+      "unsafe_songs": {
+        "01 Allare BPM 120": {
+          "leaked_words": [
+            "फर्केर",
+            "फसेन",
+            "फसिँदैन",
+            "फसेन..",
+            "फसिँदैन"
+          ],
+          "uncovered_keys": []
+        },
+        "02 Jam Na Maya Jam BPM 115": {
+          "leaked_words": [],
+          "uncovered_keys": [
+            "U+00CC"
+          ]
+        },
+        "05 Ritu BPM 105": {
+          "leaked_words": [
+            "फर्केर",
+            "फर्केर",
+            "दुईतर्फी"
+          ],
+          "uncovered_keys": []
+        },
+        "07 Wora Para BPM 115": {
+          "leaked_words": [
+            "फर्की",
+            "फर्की",
+            "आफू"
+          ],
+          "uncovered_keys": []
+        }
+      }
+    },
+    "arap007": {
+      "class": "PREETI",
+      "safe_songs": [
+        "02 Jam Na Maya Jam BPM 115",
+        "03 Kali Kali BPM 120",
+        "04 Ow Amira BPM 122",
+        "06 Timilai Bhuleko BPM 110"
+      ],
+      "unsafe_songs": {
+        "01 Allare BPM 120": {
+          "leaked_words": [
+            "फर्केर",
+            "फसेन",
+            "फसिँदैन",
+            "फसेन..",
+            "फसिँदैन"
+          ],
+          "uncovered_keys": []
+        },
+        "05 Ritu BPM 105": {
+          "leaked_words": [
+            "फर्केर",
+            "फर्केर",
+            "दुईतर्फी"
+          ],
+          "uncovered_keys": []
+        },
+        "07 Wora Para BPM 115": {
+          "leaked_words": [
+            "फर्की",
+            "फर्की",
+            "आफू"
+          ],
+          "uncovered_keys": []
+        }
+      }
+    },
+    "himalayabold": {
+      "class": "PREETI",
+      "safe_songs": [
+        "03 Kali Kali BPM 120",
+        "04 Ow Amira BPM 122",
+        "06 Timilai Bhuleko BPM 110"
+      ],
+      "unsafe_songs": {
+        "01 Allare BPM 120": {
+          "leaked_words": [
+            "फर्केर",
+            "फसेन",
+            "फसिँदैन",
+            "फसेन..",
+            "फसिँदैन"
+          ],
+          "uncovered_keys": []
+        },
+        "02 Jam Na Maya Jam BPM 115": {
+          "leaked_words": [],
+          "uncovered_keys": [
+            "U+00CC"
+          ]
+        },
+        "05 Ritu BPM 105": {
+          "leaked_words": [
+            "फर्केर",
+            "फर्केर",
+            "दुईतर्फी"
+          ],
+          "uncovered_keys": []
+        },
+        "07 Wora Para BPM 115": {
+          "leaked_words": [
+            "फर्की",
+            "फर्की",
+            "आफू"
+          ],
+          "uncovered_keys": []
+        }
+      }
+    },
+    "katmandu": {
+      "class": "PREETI",
+      "safe_songs": [
+        "03 Kali Kali BPM 120",
+        "04 Ow Amira BPM 122",
+        "06 Timilai Bhuleko BPM 110"
+      ],
+      "unsafe_songs": {
+        "01 Allare BPM 120": {
+          "leaked_words": [
+            "फर्केर",
+            "फसेन",
+            "फसिँदैन",
+            "फसेन..",
+            "फसिँदैन"
+          ],
+          "uncovered_keys": []
+        },
+        "02 Jam Na Maya Jam BPM 115": {
+          "leaked_words": [],
+          "uncovered_keys": [
+            "U+00CC"
+          ]
+        },
+        "05 Ritu BPM 105": {
+          "leaked_words": [
+            "फर्केर",
+            "फर्केर",
+            "दुईतर्फी"
+          ],
+          "uncovered_keys": []
+        },
+        "07 Wora Para BPM 115": {
+          "leaked_words": [
+            "फर्की",
+            "फर्की",
+            "आफू"
+          ],
+          "uncovered_keys": []
+        }
+      }
+    },
+    "shreenath-bold": {
+      "class": "PREETI",
+      "safe_songs": [
+        "02 Jam Na Maya Jam BPM 115",
+        "03 Kali Kali BPM 120",
+        "04 Ow Amira BPM 122",
+        "06 Timilai Bhuleko BPM 110"
+      ],
+      "unsafe_songs": {
+        "01 Allare BPM 120": {
+          "leaked_words": [
+            "फर्केर",
+            "फसेन",
+            "फसिँदैन",
+            "फसेन..",
+            "फसिँदैन"
+          ],
+          "uncovered_keys": []
+        },
+        "05 Ritu BPM 105": {
+          "leaked_words": [
+            "फर्केर",
+            "फर्केर",
+            "दुईतर्फी"
+          ],
+          "uncovered_keys": []
+        },
+        "07 Wora Para BPM 115": {
+          "leaked_words": [
+            "फर्की",
+            "फर्की",
+            "आफू"
+          ],
+          "uncovered_keys": []
+        }
+      }
+    }
   }
 }

@@ -207,15 +207,102 @@ def report(lines, charmap, label):
     return False
 
 
+# The five key layouts npttf2utf knows by name. A PREETI-class font has NO
+# layouts/<slug>.json -- by definition -- because it speaks one of these instead,
+# and the encoder already knows all five. Naming them here is what lets the gate
+# ask the question for 77 of the 214 fonts instead of only the 79 with a
+# generated map.
+BUILTIN_LAYOUTS = ("Preeti", "Preeti100", "Preeti2007", "Preeti2008", "Preeti2009")
+
+
+def encode_report(lines, builtin):
+    """Can `builtin` write these words? Measured by ENCODING them, not by
+    consulting a map.
+
+    A map lookup and a real encode are different questions for this class, and
+    only the second is the right one. The Preeti encoder is not a table lookup:
+    it folds ligatures, positions the reph, and moves a pre-base i-matra to the
+    correct side of its cluster, and those are exactly the steps where a word can
+    come out as a DIFFERENT VALID WORD. Checking "does every character have a key"
+    answers a question about the alphabet and says nothing about whether a
+    particular cluster is expressible.
+
+    So the test is the failure itself: encode each word, and report any
+    Devanagari that SURVIVED. A survivor is a character the layout had no key
+    for; the legacy font has no glyph for it either, so Chromium substitutes a
+    different typeface for that one character, mid-word, silently.
+    """
+    import layout_encoder
+
+    bad = []
+    for line in lines:
+        for word in line.split():
+            if not any(0x900 <= ord(c) <= 0x97F for c in word):
+                continue
+            try:
+                out = layout_encoder.encode(word, builtin)
+            except Exception as exc:
+                bad.append((word, "encode raised %s" % type(exc).__name__))
+                continue
+            if isinstance(out, tuple):
+                out = out[0]
+            left = [c for c in str(out) if 0x900 <= ord(c) <= 0x97F]
+            if left:
+                bad.append((word, "".join(left)))
+
+    total = sum(len(l.split()) for l in lines)
+    print("\n  layout %s (built in), by real encode" % builtin)
+    if not bad:
+        print("  Every word encodes. No character falls through to a fallback face.")
+        return True
+    print("  %d of %d words cannot be written by this layout:" % (len(bad), total))
+    for word, left in bad[:12]:
+        print("      %-24s leaks %s" % (word, left))
+    if len(bad) > 12:
+        print("      ... and %d more" % (len(bad) - 12))
+    print("")
+    print("  A leaked character is not a cosmetic problem. The legacy font has no")
+    print("  glyph for it, so Chromium draws THAT CHARACTER in a different")
+    print("  typeface, in the middle of the word, with no error anywhere. The")
+    print("  pre-base i-matra (the mark written left of its consonant) is what")
+    print("  fails here, and a pre-base i-matra left in the wrong place turns one")
+    print("  word into a different, valid, wrong word.")
+    return False
+
+
 def main():
     ap = argparse.ArgumentParser(add_help=True)
     ap.add_argument("lrc", nargs="?", help="the song's .lrc")
-    ap.add_argument("--layout", help="a layout .json to test against")
+    ap.add_argument("--layout", help="a layout .json, or the name of a built-in one")
     ap.add_argument("--font", help="a layout slug, looked up in layouts/")
     ap.add_argument("--all", action="store_true",
                     help="with --font, test every layout in layouts/")
     ap.add_argument("--word", help="test one word instead of a file")
     a = ap.parse_args()
+
+    # A built-in layout name is not a path. Resolving it as one is how this tool
+    # used to answer "no such layout file: Preeti" -- true, and useless, because
+    # it looks like the gate examined the lyrics and found nothing usable when
+    # in fact it never read them.
+    builtin = None
+    if a.layout and not os.path.exists(a.layout):
+        for name in BUILTIN_LAYOUTS:
+            if a.layout.lower() == name.lower():
+                builtin = name
+                break
+        else:
+            builtin = None
+
+    if builtin:
+        if a.word:
+            ok = encode_report([a.word], builtin)
+        else:
+            lines = read_lines(a.lrc)
+            if not lines:
+                sys.stderr.write("no lyric lines found in %s\n" % a.lrc)
+                return 2
+            ok = encode_report(lines, builtin)
+        sys.exit(0 if ok else 1)
 
     if a.word:
         if not (a.layout or a.font):

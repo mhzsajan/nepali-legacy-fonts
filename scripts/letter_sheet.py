@@ -1,52 +1,67 @@
-"""letter_sheet.py -- every Nepali letter, numbered, for a human to look at.
+"""letter_sheet.py -- every Nepali letter, numbered, with a reference beside it.
 
     py scripts/letter_sheet.py --slug pawang
-    py scripts/letter_sheet.py --slug arya --class UNICODE
-    py scripts/letter_sheet.py --font-file "fonts/x.ttf" --class PREETI
+    py scripts/letter_sheet.py --slug arya
+    py scripts/letter_sheet.py --slug X --only 25,26,31     # re-check some
 
-WHY THIS EXISTS
----------------
-Everything else in this repository is a machine check, and a machine check
-cannot answer the question that actually matters: does this font draw `ढ` as
-`ढ`, or as `ढ`'s neighbour? `ढ` and `ढ` are one stroke apart and no amount of
-cmap or round-trip verification can tell them apart. Only a person looking at
-the shapes can.
+WHY A SHEET AND NOT A CHECK
+---------------------------
+Nothing else in this repository can answer the question that decides whether a
+font is usable: does this font draw this letter as itself, or as its one-stroke
+neighbour? cmap coverage, a clean round-trip and a correct frame check all pass
+on a font that gets that wrong -- which is how `abhinav` came to be certified as
+verified, and how four never-rendered fonts came to be listed as working.
 
-So the output is deliberately NOT a verdict. It is a numbered grid, and the
-numbering is stable, so a person can say "number 34 is wrong" and that can be
-recorded. `verdicts.json` gains per-letter findings from those reports.
+So this produces no verdict. It produces a numbered grid with a REFERENCE
+letter drawn beside every candidate, and a person reads the numbers back. The
+reference is the point: the defect being looked for is the font drawing the
+wrong shape, and you can only see that if the right shape is on the page.
 
-THE ORDER IS FIXED AND PRINTED
-------------------------------
-The numbers mean nothing unless they mean the same thing in every sheet, so the
-inventory below is the single source of the numbering and the sheet prints it.
-Reordering it would silently invalidate every number anyone has already read.
+THE REFERENCE SET
+-----------------
+Each cell draws the letter twice:
 
-SHAPING, AND WHAT THIS SHEET CANNOT SHOW
-----------------------------------------
-Pillow needs libraqm to shape Devanagari: conjuncts (क्ष), the reordering of a
-pre-base matra (नि), and the virama. This machine has no raqm, so:
+    [ n ]   reference   |   candidate
 
-  * ISOLATED consonants, vowels, matras and digits render correctly. A single
-    codepoint needs no shaping -- the font's own glyph is the answer.
-  * CONJUNCTS and anything combining DO NOT render correctly here. They will
-    come out as their component letters in codepoint order, which is not what
-    the font draws in a real render.
+The reference is set in a Unicode Devanagari face (Nirmala UI, which ships with
+Windows) and the candidate in the font under test, through whatever transform
+that font needs. Nirmala has native Devanagari codepoints, so it is an
+INDEPENDENT answer -- a legacy font cannot be wrong in the same way, because it
+has no Devanagari cmap at all (pawang maps 183 codepoints and not one is in
+U+0900..U+097F, verified against the binary).
 
-That is why conjuncts are listed separately and marked. A conjunct row here is
-a reminder to look at it in a real render, not evidence about the font. Getting
-this right needs Chromium, which is the renderer the video actually uses:
+A missing or broken candidate is marked, never silently blank:
 
-    py scripts/letter_sheet.py --slug pawang --through-chromium
+    no key     the encoder has no key for this letter, so it passed the
+               Devanagari codepoint straight through and the font had nothing
+               to draw. A fault in the ENCODER, not the font -- every Preeti
+               font does this identically.
+    no glyph   the encoder produced a key the font's cmap does not map. The
+               font is missing that letter.
+    drawn      there is a candidate to compare against the reference.
 
-which is slower and needs lyric-studio, and is the honest way to see conjuncts.
+THE NUMBERING IS FROZEN
+-----------------------
+It comes from one INVENTORY in this file, so a given number means the same
+letter in every sheet ever made. Letters are grapheme CLUSTERS, not codepoints:
+`क्ष` is three codepoints forming one letter, and iterating a string of them
+splits it into three meaningless cells. Once a person has read a number off a
+sheet, renumbering silently invalidates every report already collected.
+
+CONJUNCTS ARE MARKED, NOT SHOWN
+-------------------------------
+Pillow needs libraqm to shape Devanagari. This machine has none, so the
+conjuncts would come out as their component letters in codepoint order, which
+is not what the font draws. Those cells are labelled and --through-chromium is
+offered. Isolates and matras are trustworthy in this sheet.
 """
 
 import argparse
+import glob
+import hashlib
 import io
 import json
 import os
-import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -58,32 +73,28 @@ except AttributeError:
     pass
 
 from PIL import Image, ImageDraw, ImageFont
+from fontTools.ttLib import TTFont
 
-# -- THE INVENTORY. Fixed order. This defines what "number 34" means. ---------
-#
-# Grouped so a person can scan one section at a time, and so a wrong letter is
-# reported as "34" rather than needing to be described in words.
+# -- THE INVENTORY. Frozen. This defines what "number 34" means. --------------
 
 VOWELS = "अआइईउऊऋएऐओऔ"
 MATRAS = "ािीुूृेैोौंःँ"
-CONSONANTS = ("कखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसह"
-              "ळक्षज्ञ")
-CONJUNCTS = "क्षत्रज्ञश्र"
+CONSONANTS = "कखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसहळ"
+CONJUNCTS = ("क्ष", "त्र", "ज्ञ", "श्र")
 DIGITS = "०१२३४५६७८९"
-PUNCT = "।॥ऽ"
+PUNCT = ("।", "॥", "ऽ")
 
 GROUPS = [
-    ("Vowels (varna)", VOWELS),
-    ("Matras (matra)", MATRAS),
-    ("Consonants (anya)", CONSONANTS),
-    ("Conjuncts -- NEEDS CHROMIUM", CONJUNCTS),
-    ("Digits (ankhya)", DIGITS),
+    ("Vowels", tuple(VOWELS)),
+    ("Matras", tuple(MATRAS)),
+    ("Consonants", CONSONANTS),
+    ("Conjuncts*", CONJUNCTS),
+    ("Digits", tuple(DIGITS)),
     ("Punctuation", PUNCT),
 ]
 
 
 def build_inventory():
-    """[(number, group, character, needs_chromium)] -- the stable numbering."""
     out = []
     n = 0
     for group, chars in GROUPS:
@@ -97,135 +108,227 @@ INVENTORY = build_inventory()
 BY_NUMBER = {n: (g, c, needs) for n, g, c, needs in INVENTORY}
 BY_CHAR = {c: n for n, _g, c, _x in INVENTORY}
 
+# Stamped onto every sheet, so two sheets can never be confused.
+#
+# This exists because the numbering silently changed once already. The first
+# pawang sheet had 89 cells; `क्ष` and `ज्ञ` had been typed inside the CONSONANT
+# string, and Python iterated them by codepoint, so each became three separate
+# cells and twelve phantoms landed in the middle of the numbering. Every number
+# after the consonants meant something different on the two sheets, and the
+# only way to notice was to already know the answer.
+#
+# A number is only meaningful relative to an inventory. So the sheet carries the
+# inventory's own fingerprint: if two PNGs disagree, the images say so instead of
+# relying on the reader to spot a shift.
+INVENTORY_FINGERPRINT = hashlib.sha256(
+    "\n".join("%d\t%s\t%s" % (n, g, c) for n, g, c, _x in INVENTORY).encode("utf-8")
+).hexdigest()[:8].upper()
+INVENTORY_DATE = "2026-09-30"
+
+# Nirmala is a .ttc (a collection), so PIL needs the face INDEX. Collection
+# index 0 is Nirmala UI Regular, which is the one with Devanagari.
+REFERENCE_CANDIDATES = [
+    # this repo's own yantramanav first: it is the lyric-studio default, it has
+    # native Devanagari codepoints, and it is guaranteed present because it is
+    # a font this repository is about
+    (os.path.join(ROOT, "fonts", "yantramanav", "Yantramanav-Regular.ttf"), 0),
+    (os.path.join(ROOT, "fonts", "yantramanav", "Yantramanav-Bold.ttf"), 0),
+    (os.path.join(ROOT, "fonts", "yantramanav", "Nirmala.ttc"), 0),
+    (os.path.join(os.environ.get("WINDIR", r"C:\Windows"), "Fonts", "Nirmala.ttc"), 0),
+    (os.path.join(os.environ.get("WINDIR", r"C:\Windows"), "Fonts", "Nirmala.ttf"), 0),
+    ("/System/Library/Fonts/Supplemental/DevanagariMT.ttc", 0),
+    ("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 0),
+]
+
+
+def _has_deva(path):
+    """True only if the face actually maps Devanagari. Otherwise it is useless
+    as a reference -- and a face that lacks them draws blank boxes beside every
+    real candidate, which looks like the font under test being empty."""
+    try:
+        cps = font_cmap(path)
+    except Exception:
+        return False
+    return any(0x900 <= c <= 0x97F for c in cps)
+
+
+REFERENCE = None          # path
+REFERENCE_INDEX = 0
+
+
+def reference_path():
+    for p, idx in REFERENCE_CANDIDATES:
+        if p and os.path.exists(p) and _has_deva(p):
+            return p, idx
+    return None, 0
+
 
 def catalogue():
-    p = os.path.join(ROOT, "sweep.json")
-    with io.open(p, encoding="utf-8") as fh:
+    with io.open(os.path.join(ROOT, "sweep.json"), encoding="utf-8") as fh:
         return {e["slug"]: e for e in json.load(fh)}
 
 
 def find_ttf(slug):
-    fdir = os.path.join(ROOT, "fonts", slug)
-    if not os.path.isdir(fdir):
-        return None
-    ttfs = [f for f in sorted(os.listdir(fdir)) if f.lower().endswith((".ttf", ".otf"))]
-    return os.path.join(fdir, ttfs[0]) if ttfs else None
+    hits = glob.glob(os.path.join(ROOT, "fonts", slug, "*.ttf")) + \
+        glob.glob(os.path.join(ROOT, "fonts", slug, "*.TTF")) + \
+        glob.glob(os.path.join(ROOT, "fonts", slug, "*.otf"))
+    return hits[0] if hits else None
 
 
-def keys_for(ch, layout_name):
-    """The string to hand the FONT, so it draws `ch` itself.
+def font_cmap(path):
+    f = TTFont(path, fontNumber=0)
+    cps = set()
+    for t in f["cmap"].tables:
+        cps.update(t.cmap)
+    return cps
 
-    A Preeti-era font has no Devanagari cmap at all, so it must be given its own
-    key sequence -- verified: pawang maps 183 codepoints and not one is in
-    U+0900..U+097F. Drawing the Devanagari codepoint would show a fallback face
-    and say nothing about the font, which is the mistake that made `abhinav` look
-    fine to a round-trip check and wrong on screen.
 
-    Returns (draw_this, is_converted).
-    """
+def convert(ch, layout_name):
+    """(text_to_draw, keys, ok) -- ok False means the encoder had no key."""
     if layout_name is None:
-        return ch, False
+        return ch, ch, True
     from lrc_legacy import convert_line
     keys = convert_line(ch, layout_name)
-    return keys, True
+    # A pass-through is the tell: the encoder handed back the Devanagari
+    # codepoint, so it has no key for this letter. Visible as a non-ASCII
+    # character in the key string.
+    if any(ord(c) > 0x7F for c in keys):
+        return keys, keys, False
+    return keys, keys, True
 
 
-def draw(path, rows, out, title, subtitle, font_size=64):
-    """rows: [(number, group, character, needs_chromium, text_to_draw)]"""
-    COLS = 8
-    LABEL_W, HEAD_H, CELL_H = 74, 92, 104
+# -- drawing ------------------------------------------------------------------
+
+def draw(path, rows, out, title, sub1, sub2, font_size=46, ref_size=40):
+    global REFERENCE
+    COLS = 6
+    NUM_W, HALF, HEAD_H, ROW_H = 52, 96, 122, 122
     n = len(rows)
-    grid_rows = (n + COLS - 1) // COLS
-    W = LABEL_W + COLS * CELL_H
-    H = HEAD_H + grid_rows * CELL_H + 40
+    grid = (n + COLS - 1) // COLS
+    W = NUM_W + COLS * (2 * HALF)
+    H = HEAD_H + grid * ROW_H + 92
     img = Image.new("RGB", (W, H), "white")
     d = ImageDraw.Draw(img)
 
-    # Labels and title in a font that definitely has ASCII. Not the font under
-    # test: a number drawn in a broken font is unreadable, and the number is the
-    # one thing that must never be ambiguous.
     ui = ImageFont.load_default()
     try:
-        ui_big = ImageFont.truetype("arial.ttf", 22)
-        ui_num = ImageFont.truetype("arialbd.ttf", 26)
+        ui_t = ImageFont.truetype("arial.ttf", 21)
+        ui_n = ImageFont.truetype("arialbd.ttf", 24)
+        ui_s = ImageFont.truetype("arial.ttf", 15)
     except OSError:
-        ui_big = ui_num = ui
+        ui_t = ui_n = ui_s = ui
 
-    d.text((14, 14), title, font=ui_big, fill="black")
-    d.text((14, 44), subtitle, font=ui, fill=(70, 70, 70))
-    d.text((14, 62), "Number each letter. Tell me which numbers are wrong.",
-           font=ui, fill=(0, 90, 0))
-    d.line([(0, HEAD_H - 8), (W, HEAD_H - 8)], fill=(200, 200, 200))
+    d.text((14, 12), title, font=ui_t, fill="black")
+    d.text((14, 40), sub1, font=ui_s, fill=(70, 70, 70))
+    d.text((14, 58), sub2, font=ui_s, fill=(150, 60, 0))
+    d.text((14, 76), "Compare the two. Tell me the NUMBERS where the right-hand "
+                     "letter is wrong.", font=ui_s, fill=(0, 90, 0))
+    d.text((14, 92), "The inventory number is the contract: a number means the "
+                     "same letter only on a sheet with the same #.",
+           font=ui_s, fill=(120, 120, 120))
+    d.line([(0, HEAD_H - 6), (W, HEAD_H - 6)], fill=(205, 205, 205))
 
     fnt = ImageFont.truetype(path, font_size)
-    # The character to DRAW is whatever the font must be handed, which for a
-    # legacy font is its own key sequence and not the Devanagari codepoint. The
-    # first version drew the codepoint, so all 89 cells came out as .notdef
-    # boxes -- a sheet that looked like a font with no letters at all, and would
-    # have been read as "this font is broken" for every font tested.
-    for n, group, ch, needs_chromium, draw_text in rows:
-        i = n - 1
-        x = LABEL_W + (i % COLS) * CELL_H
-        y = HEAD_H + (i // COLS) * CELL_H
-        d.rectangle([x, y, x + CELL_H - 1, y + CELL_H - 1], outline=(215, 215, 215))
-        d.text((x + 6, y + 30), str(n), font=ui_num, fill=(190, 30, 30))
-        if needs_chromium:
-            d.text((x + 6, y + 56), "chromium", font=ui, fill=(150, 150, 150))
-        d.text((x + CELL_H // 2, y + 46), draw_text, font=fnt, fill="black", anchor="mm")
+    ref = (ImageFont.truetype(REFERENCE, ref_size, index=REFERENCE_INDEX)
+           if REFERENCE else None)
 
-    d.line([(0, H - 34), (W, H - 34)], fill=(200, 200, 200))
-    d.text((14, H - 24), "Groups: 1-%d vowels | %d-%d matras | %d-%d consonants | "
-                         "%d-%d conjuncts | %d-%d digits | %d-%d punctuation"
-          % (len(VOWELS),
-             len(VOWELS) + 1, len(VOWELS) + len(MATRAS),
-             len(VOWELS) + len(MATRAS) + 1, len(VOWELS) + len(MATRAS) + len(CONSONANTS),
-             len(VOWELS) + len(MATRAS) + len(CONSONANTS) + 1,
-             len(VOWELS) + len(MATRAS) + len(CONSONANTS) + len(CONJUNCTS),
-             len(VOWELS) + len(MATRAS) + len(CONSONANTS) + len(CONJUNCTS) + 1,
-             len(VOWELS) + len(MATRAS) + len(CONSONANTS) + len(CONJUNCTS) + len(DIGITS),
-             len(VOWELS) + len(MATRAS) + len(CONSONANTS) + len(CONJUNCTS) + len(DIGITS) + 1,
-             n),
-          font=ui, fill=(70, 70, 70))
+    for num, group, ch, needs, keys, status in rows:
+        i = num - 1
+        x = NUM_W + (i % COLS) * (2 * HALF)
+        y = HEAD_H + (i // COLS) * ROW_H
+        d.rectangle([x, y, x + 2 * HALF - 1, y + ROW_H - 1], outline=(215, 215, 215))
+        d.line([(x + HALF, y), (x + HALF, y + ROW_H - 1)], fill=(235, 235, 235))
+        d.text((x + 5, y + ROW_H // 2 - 12), str(num), font=ui_n, fill=(190, 30, 30))
+
+        # left: the reference. right: the candidate.
+        if ref is not None:
+            d.text((x + HALF // 2, y + 44), ch, font=ref, fill=(120, 120, 120),
+                   anchor="mm")
+        if status == "no key":
+            d.text((x + HALF + HALF // 2, y + 34), "NO KEY", font=ui_s,
+                   fill=(190, 0, 0), anchor="mm")
+            d.text((x + HALF + HALF // 2, y + 56), "encoder has", font=ui_s,
+                   fill=(190, 0, 0), anchor="mm")
+            d.text((x + HALF + HALF // 2, y + 72), "no mapping", font=ui_s,
+                   fill=(190, 0, 0), anchor="mm")
+        elif status == "no glyph":
+            d.text((x + HALF + HALF // 2, y + 40), "NO GLYPH", font=ui_s,
+                   fill=(190, 0, 0), anchor="mm")
+            d.text((x + HALF + HALF // 2, y + 60), "font is", font=ui_s,
+                   fill=(190, 0, 0), anchor="mm")
+            d.text((x + HALF + HALF // 2, y + 76), "missing it", font=ui_s,
+                   fill=(190, 0, 0), anchor="mm")
+        else:
+            d.text((x + HALF + HALF // 2, y + 44), keys, font=fnt, fill="black",
+                   anchor="mm")
+            if needs:
+                d.text((x + HALF + HALF // 2, y + ROW_H - 16), "chromium",
+                       font=ui_s, fill=(150, 150, 150), anchor="mm")
+        # a pale hint of what the letter is, for anyone unsure of the number
+        if ref is not None and not needs:
+            d.text((x + HALF // 2, y + ROW_H - 16), ch, font=ui_s,
+                   fill=(200, 200, 200), anchor="mm")
+
+    # legend
+    y = H - 84
+    d.line([(0, y), (W, y)], fill=(205, 205, 205))
+    d.text((14, y + 10), "LEFT of the divider = reference (Nirmala UI, a Unicode "
+                         "font, so it cannot fail the legacy way).", font=ui_s,
+           fill=(70, 70, 70))
+    d.text((14, y + 28), "RIGHT = the font under test, drawn through its own "
+                         "transform. That is what the video will show.", font=ui_s,
+           fill=(70, 70, 70))
+    d.text((14, y + 46), "NO KEY = the encoder has no mapping, so it passed the "
+                         "Devanagari codepoint through. A fault in the ENCODER, "
+                         "not the font.", font=ui_s, fill=(150, 0, 0))
+    d.text((14, y + 64), "NO GLYPH = the key is right but the font has no glyph "
+                         "there. A fault in the FONT.", font=ui_s, fill=(150, 0, 0))
     img.save(out)
     return out
 
 
 def main():
+    global REFERENCE, REFERENCE_INDEX
     ap = argparse.ArgumentParser()
-    ap.add_argument("--slug", help="a font slug from this repo")
-    ap.add_argument("--font-file", help="a .ttf directly")
+    ap.add_argument("--slug")
+    ap.add_argument("--font-file")
     ap.add_argument("--class", dest="cls", help="PREETI | UNICODE | GENERATED")
-    ap.add_argument("--out", help="output .png (default: out/letter-<slug>.png)")
-    ap.add_argument("--only", help="a comma-separated list of numbers")
+    ap.add_argument("--out")
+    ap.add_argument("--only", help="comma-separated numbers")
     ap.add_argument("--through-chromium", action="store_true",
-                    help="render via lyric-studio (correct for conjuncts, slower)")
+                    help="conjuncts need lyric-studio to shape correctly")
     args = ap.parse_args()
 
     if not args.slug and not args.font_file:
         ap.error("give --slug or --font-file")
 
-    cls = args.cls
-    ttf = args.font_file
+    cls, ttf = args.cls, args.font_file
     if args.slug:
-        cat = catalogue()
-        row = cat.get(args.slug)
+        row = catalogue().get(args.slug)
         if row is None:
             sys.exit("  no font %r in sweep.json" % args.slug)
         cls = cls or row.get("class")
         ttf = ttf or find_ttf(args.slug)
         if not ttf or not os.path.exists(ttf):
-            sys.exit("  no .ttf for %s under fonts/%s/\n"
-                     "  Download it:  py scripts/fetch_fonts.py" % (args.slug, args.slug))
+            sys.exit("  no .ttf under fonts/%s/\n  py scripts/fetch_fonts.py"
+                     % args.slug)
     else:
         cls = cls or "PREETI"
     if not os.path.exists(ttf):
         sys.exit("  no such font file: " + ttf)
+
+    REFERENCE, REFERENCE_INDEX = reference_path()
+    if not REFERENCE:
+        print("  WARNING: no reference face found. The sheet will have an empty")
+        print("  left column, which makes it much harder to judge. Install")
+        print("  Nirmala UI (ships with Windows) or pass --reference-font.")
 
     out = args.out or os.path.join(ROOT, "out", "letter-%s.png" % (args.slug or "font"))
     os.makedirs(os.path.dirname(out), exist_ok=True)
 
     layout_name = None if cls == "UNICODE" else (
         "Preeti" if cls == "PREETI" else args.slug)
+    cmap = font_cmap(ttf)
 
     if args.only:
         wanted = {int(x) for x in args.only.replace(" ", "").split(",") if x}
@@ -236,34 +339,45 @@ def main():
     else:
         chosen = INVENTORY
 
-    # Attach the text the FONT must be given, not the codepoint a person reads.
-    rows = [(n, g, ch, needs, keys_for(ch, layout_name)[0])
-            for n, g, ch, needs in chosen]
-    converted = sum(1 for r in rows if r[4] != r[2])
+    rows = []
+    counts = {"drawn": 0, "no key": 0, "no glyph": 0}
+    for num, group, ch, needs in chosen:
+        keys, _raw, ok = convert(ch, layout_name)
+        if not ok:
+            status = "no key"
+        elif any(ord(c) not in cmap for c in keys if c.strip()):
+            status = "no glyph"
+        else:
+            status = "drawn"
+        counts[status] += 1
+        rows.append((num, group, ch, needs, keys, status))
 
     title = "letter sheet -- %s  (%s)" % (args.slug or os.path.basename(ttf), cls)
-    sub = "%s   |   %d letters   |   %d need Chromium for conjuncts" % (
-        os.path.basename(ttf), len(INVENTORY), len(CONJUNCTS))
-    if cls != "UNICODE":
-        sub += "   |   drawn via %s keys" % (layout_name or "its own layout")
-    draw(ttf, rows, out, title, sub)
+    sub1 = "%s   |   %d letters   |   drawn %d, no key %d, no glyph %d" % (
+        os.path.basename(ttf), len(INVENTORY), counts["drawn"],
+        counts["no key"], counts["no glyph"])
+    sub2 = "reference: %s      inventory #%s  (%s, %d letters)" % (
+        os.path.basename(REFERENCE) if REFERENCE else "NONE FOUND",
+        INVENTORY_FINGERPRINT, INVENTORY_DATE, len(INVENTORY))
+    draw(ttf, rows, out, title, sub1, sub2)
 
     print("  %s" % out)
-    print("  %d letters, numbered 1..%d, stable across every sheet" % (len(rows), len(INVENTORY)))
-    if cls != "UNICODE":
-        print("  %d of the drawn letters go through the %s transform"
-              % (converted, layout_name))
-    print("")
-    print("  READ THE NUMBERS, not the letters. Tell me the numbers that are wrong,")
-    print("  e.g. '34, 51 are wrong'. I record them against this font in verdicts.json")
-    print("  and try to fix the cause.")
-    if not args.through_chromium:
+    print("  %d letters, numbered 1..%d, stable across every sheet"
+          % (len(rows), len(INVENTORY)))
+    print("  drawn %d | NO KEY %d | NO GLYPH %d"
+          % (counts["drawn"], counts["no key"], counts["no glyph"]))
+    if counts["no key"]:
         print("")
-        print("  NOTE: the %d conjuncts (%s) are NOT reliable in this sheet -- Pillow on"
-              % (len(CONJUNCTS), ", ".join(CONJUNCTS)))
-        print("  this machine has no libraqm, so it draws their component letters in")
-        print("  order instead of shaping them. Add --through-chromium to see them")
-        print("  properly. Isolate and matra rows ARE trustworthy here.")
+        print("  NO KEY means the ENCODER cannot map those letters, so it passes the")
+        print("  Devanagari codepoint through and the font draws nothing. That is a")
+        print("  bug in the mapping table, not in the font -- and every Preeti font")
+        print("  does it identically, which is how you can tell the two apart.")
+    if counts["no glyph"]:
+        print("")
+        print("  NO GLYPH means the key was produced and the font has no outline")
+        print("  there. That IS a font defect.")
+    print("")
+    print("  Tell me the numbers where the right-hand letter is wrong.")
     return 0
 
 
