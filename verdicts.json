@@ -78,7 +78,8 @@
     "cv-haha": {
       "state": "working",
       "class": "PREETI",
-      "look": "rounded soft"
+      "look": "rounded soft",
+      "note": "Eye-checked on Allare, and working there. BUT it draws the WRONG GLYPH SHAPES on Ow Amira (04), observed 2026-10-01 while choosing faces for a seven-video batch; all four PREETI faces were excluded from that batch on this basis. This is the failure class NO script can catch: preeti_song_safety below is a MECHANICAL claim (leaked words, uncovered keys) and Ow Amira genuinely passes it -- the key resolves, the word is not corrupted, and the glyph that comes out is still the wrong character. So `working` here means 'on Allare', not 'on any song'. Verified != song-tested, and song-tested on ONE song is not song-tested on another."
     },
     "mkali": {
       "state": "working",
@@ -93,23 +94,26 @@
     "arya": {
       "state": "working",
       "class": "UNICODE",
-      "look": "modern serif-bold"
+      "look": "modern serif-bold",
+      "note": "Rendered 2026-10-01 on two of the seven delivered videos -- Allare (01) and Ritu (05) -- 1920x1080, both passing the every-frame cue gate (no lyric visible outside its own [start, end]). The delivered batch used ONLY the four UNICODE faces, so this is production evidence and not a specimen."
     },
     "kalam": {
       "state": "working",
       "class": "UNICODE",
-      "look": "handwritten bold"
+      "look": "handwritten bold",
+      "note": "Rendered 2026-10-01 on two of the seven delivered videos -- Jam Na Maya Jam (02) and Timilai Bhuleko (06) -- both passing the every-frame cue gate. Production evidence, not a specimen."
     },
     "rajdhani": {
       "state": "working",
       "class": "UNICODE",
-      "look": "condensed display"
+      "look": "condensed display",
+      "note": "Rendered 2026-10-01 on one of the seven delivered videos -- Ow Amira (04) -- passing the every-frame cue gate. Production evidence, not a specimen."
     },
     "yantramanav": {
       "state": "working",
       "class": "UNICODE",
       "look": "geometric black",
-      "note": "pipeline-verified end to end; the lyric-studio default. Not part of the 42, and not part of the human eye-check."
+      "note": "pipeline-verified end to end; the lyric-studio default. Not part of the 42, and not part of the human eye-check. Also rendered 2026-10-01 on two of the seven delivered videos -- Kali Kali (03) and Wora Para (07) -- both passing the every-frame cue gate."
     },
     "0012-arap": {
       "state": "broken",

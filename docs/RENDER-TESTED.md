@@ -45,7 +45,29 @@ the glyph is the right one** — only a watched render does that, and two fonts
 here pass every automated check and still spell words wrong.
 
 Renderer: `lyric-studio`'s `render.mjs`. Test song: **Allare** (35 lines, 6:54,
-candrabindu + virama + punctuation-heavy). Date of record: **2026-09-30**.
+candrabindu + virama + punctuation-heavy). Date of record: **2026-09-30**,
+extended **2026-10-01** with production renders from a seven-video batch.
+
+## "working" is a claim about a SONG, not about a font
+
+A `working` verdict means *this font rendered this song and a person looked at
+it*. It does not mean the font is right on the next song, and the two are
+routinely confused because the schema has one state and a song has many.
+
+The failure is specific and it is the worst kind: a legacy face can pass every
+mechanical check on a new song — no leaked words, no uncovered keys, the round
+trip clean, the render log silent — and still draw the **wrong glyph shape**,
+because "the key resolves to a real glyph" and "the glyph is the right
+character" are different claims and only a person can make the second one.
+
+`preeti_song_safety` is a **mechanical** table. It answers "will a word be
+corrupted?". It does not answer "will the word be spelled correctly?", and a row
+in `safe_songs` is not a promise that the glyphs are right. Two entries in this
+repository are `working` on the strength of one song each.
+
+So: **before putting a legacy font on a song it was not tested on, render a frame
+and look at it.** It costs seconds, and on this class of failure nothing else in
+either repository will tell you.
 
 ## The handpicked 42, accounted for
 
@@ -75,3 +97,8 @@ real songs, and `UNICODE` fonts cannot fail the legacy way.
 4. **Do not mark a font working without rendering the song and looking at it.**
    Record the date and the song alongside the verdict.
 5. **Edit `verdicts.json`, not this file.** This file explains the data.
+6. **A `working` verdict is about a song, not a font.** See "working is a claim
+   about a SONG" above. A row in `preeti_song_safety.safe_songs` means the
+   encoding will not corrupt a word; it does **not** mean the glyphs are the right
+   characters. Render a frame before putting a legacy face on a song it was never
+   tested on.
